@@ -10,9 +10,10 @@ filetype plugin indent on
 au BufRead,BufNewFile *.md setlocal textwidth=100
 " Make it obvious where 80 characters is
 set textwidth=80
-set colorcolumn=+1
+"set colorcolumn=+1
 "Working on making more compatible with Python.
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 
+autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 au BufRead,BufNewFile *.sh setlocal textwidth=100
 " Bind `q` to close the buffer for help files
 autocmd Filetype help nnoremap <buffer>q :q<CR>
@@ -41,6 +42,8 @@ nmap <leader>so :source $MYVIMRC<cr>
 nnoremap <F5> "=strftime("%c")<CR>P
 inoremap <F5> <C-R>=strftime("%c")<CR>
 nnoremap <Leader>e :q<CR>
+
+nnoremap <Leader>el :q!<CR>
 nnoremap <Leader>s :w<CR>
 inoremap jj <Esc> 
 nnoremap <Leader>z :NERDTreeToggle<CR>
@@ -53,7 +56,7 @@ vnoremap <Leader>y "+y
 "to jump out of brackets
 "inoremap <C-e> <C-o>A
 "set cursorline
-colorscheme deus
+colorscheme dracula
 
 
 " When started as "evim", evim.vim will already have done these settings.
@@ -107,7 +110,6 @@ if has('syntax') && has('eval')
 endif
 
 let g:instant_markdown_autostart = 0
-
 
 "Trying to get rid of swap files in Vim. They are cluttering up directories
 "and I don't need them.
