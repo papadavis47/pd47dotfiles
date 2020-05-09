@@ -10,47 +10,52 @@ filetype plugin indent on
 au BufRead,BufNewFile *.md setlocal textwidth=100
 " Make it obvious where 80 characters is
 set textwidth=80
+set hidden
 "set colorcolumn=+1
 "Working on making more compatible with Python.
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 
 autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype help nmap <buffer> q :q<cr>
 au BufRead,BufNewFile *.sh setlocal textwidth=100
 " Bind `q` to close the buffer for help files
 autocmd Filetype help nnoremap <buffer>q :q<CR>
 set background=dark
 set nocompatible
-set number relativenumber
+set relativenumber 
 set softtabstop=2
 set expandtab
 set shiftwidth=2
 "the line below is for using the mouse once in a while for cursor position
 set mouse=a
 "playing with leader values here for the next few lines.
-let mapleader="\<Space>"
+let mapleader=","
 "I mapped to the space key here. Before I had comma. Trying out diff things.
 noremap <TAB> )
 noremap ` (
 "I learned the following from Ben Orenstein:
 nmap k gk
 nmap j gj
+" Mapping Q to q when I make that mistake on quitting
+command! Q q "Bind :Q to :q
 " Switch between the last two files
-nnoremap <Leader><Leader> <C-^>
+nnoremap <leader><leader> <C-^>
 "Insert the date into a doc
-nmap <Leader>d :r!date<CR>
-nmap <leader>vr :sp $MYVIMRC<cr>
-nmap <leader>so :source $MYVIMRC<cr>
-nnoremap <F5> "=strftime("%c")<CR>P
-inoremap <F5> <C-R>=strftime("%c")<CR>
-nnoremap <Leader>e :q<CR>
+nmap <leader>vr :vsp $MYVIMRC<cr>
+nnoremap <leader>d :r!date<cr>
+nnoremap <F5> "=strftime("%c")<cr>P
+nmap 0 ^
+nnoremap <F5> <C-R>=strftime("%c")<cr>
+nnoremap <leader>e :q<cr>
+nnoremap <leader>nn :noh<cr>
 
-nnoremap <Leader>el :q!<CR>
-nnoremap <Leader>s :w<CR>
+nnoremap<leader>el :q!<cr>
+nnoremap <leader>s :w<cr>
 inoremap jj <Esc> 
-nnoremap <Leader>z :NERDTreeToggle<CR>
-nnoremap <Leader>p "+p
+nnoremap <leader>z :NERDTreeToggle<cr>
+nnoremap <leader>p "+p
 "the following is to copy the whole file contents and save it to sys clipboard
-nnoremap <Leader>sa gg V G "+y<Esc>
-vnoremap <Leader>y "+y
+nnoremap <leader>sa gg V G "+y<Esc>
+vnoremap <leader>y "+y
 "inoremap ( ()<Esc>i
 "inoremap { {}<Esc>i
 "to jump out of brackets
@@ -109,6 +114,9 @@ if has('syntax') && has('eval')
   packadd! matchit
 endif
 
+"The following is all for the markdown preview. I can check the help for that
+"plugin if I need reminding.
+let g:instant_markdown_browser = "firefox --new-window"
 let g:instant_markdown_autostart = 0
 
 "Trying to get rid of swap files in Vim. They are cluttering up directories
@@ -119,5 +127,8 @@ set nobackup
 
 abbreviate _me jwdavisdeveloper@gmail.com
 " I saw this recently on github in the vim air-line readme
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='bubblegum'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
