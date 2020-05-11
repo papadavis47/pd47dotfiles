@@ -7,16 +7,25 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-au BufRead,BufNewFile *.md setlocal textwidth=100
-" Make it obvious where 80 characters is
-set textwidth=80
+autocmd BufRead,BufNewFile *.md setlocal textwidth=100
+autocmd BufRead,BufNewFile *.sh setlocal textwidth=100
 set hidden
+set ruler
+"The following three lines are to set GFM - github flavored markdown syntax
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
+
+" Save file on lost focus
+autocmd FocusLost * :wa
+autocmd! BufWritePost ~/.vimrc source %
 "set colorcolumn=+1
-"Working on making more compatible with Python.
+"Working on making more compatible with various file types.
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 
 autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype help nmap <buffer> q :q<cr>
-au BufRead,BufNewFile *.sh setlocal textwidth=100
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'javascript']
 " Bind `q` to close the buffer for help files
 autocmd Filetype help nnoremap <buffer>q :q<CR>
 set background=dark
@@ -49,11 +58,15 @@ nnoremap <leader>e :q<cr>
 nnoremap <leader>nn :noh<cr>
 
 nnoremap<leader>el :q!<cr>
+" The following is so that I can open a window in it's own tab quickly
+nnoremap<leader>t <C-w>T 
+
 nnoremap <leader>s :w<cr>
 inoremap jj <Esc> 
 nnoremap <leader>z :NERDTreeToggle<cr>
+" The following is to paste from the system clipboard
 nnoremap <leader>p "+p
-"the following is to copy the whole file contents and save it to sys clipboard
+"the following two lines are to copy the whole file contents and save it to sys clipboard
 nnoremap <leader>sa gg V G "+y<Esc>
 vnoremap <leader>y "+y
 "inoremap ( ()<Esc>i
@@ -64,13 +77,6 @@ vnoremap <leader>y "+y
 colorscheme dracula
 
 
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
-" Get the defaults that most users want.
-source $VIMRUNTIME/defaults.vim
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -93,7 +99,6 @@ if has("autocmd")
   augroup vimrcEx
   au!
 
-  " For all text files set 'textwidth' to 80 characters.
   autocmd FileType text setlocal textwidth=80
 
   augroup END
@@ -104,12 +109,6 @@ else
 
 endif " has("autocmd")
 
-" Add optional packages.
-"
-" The matchit plugin makes the % command work better, but it is not backwards
-" compatible.
-" The ! means the package won't be loaded right away but when plugins are
-" loaded during initialization.
 if has('syntax') && has('eval')
   packadd! matchit
 endif
