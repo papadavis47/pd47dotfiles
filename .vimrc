@@ -1,16 +1,53 @@
+" Reworked .vimrc to use Vundle instead of pathogen
+" Sat 16 May 2020 02:20:16 PM PDT
+" The Vundle stuff begins below
 
-"This .vimrc is a work in progress. I keep chipping away. As of: June, 2019
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-commentary'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
 "
-"The following three lines were pasted in while trying to install pathogen by
-"t.pope. I hope it works. Will delete if necessary to put back the way it was.
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
-execute pathogen#infect()
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+" --------------------- END VUNDLE STUFF
 syntax on
 filetype plugin indent on
 autocmd BufRead,BufNewFile *.md setlocal textwidth=100
 autocmd BufRead,BufNewFile *.sh setlocal textwidth=100
 set hidden
 set ruler
+set gdefault                      " Always assume /g in substituions
+set ignorecase                    " Case-insensitive searching.
+set smartcase                     " But case-sensitive if expression contains a capital letter.
+set scrolloff=3                   " Show 3 lines of context around the cursor.
 "The following three lines are to set GFM - github flavored markdown syntax
 augroup markdown
     au!
@@ -22,7 +59,8 @@ autocmd FocusLost * :wa
 autocmd! BufWritePost ~/.vimrc source %
 "set colorcolumn=+1
 "Working on making more compatible with various file types.
-autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 
+autocmd FileType text setlocal textwidth=80
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=80
 autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype help nmap <buffer> q :q<cr>
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'javascript']
@@ -34,6 +72,10 @@ set relativenumber
 set softtabstop=2
 set expandtab
 set shiftwidth=2
+set autoindent		" always set autoindenting on
+" The following is for setting and getting rid of cursorline
+autocmd InsertLeave,WinEnter * set cursorline
+autocmd InsertEnter,WinLeave * set nocursorline
 "the line below is for using the mouse once in a while for cursor position
 set mouse=a
 "playing with leader values here for the next few lines.
@@ -48,6 +90,7 @@ nmap j gj
 command! Q q "Bind :Q to :q
 " Switch between the last two files
 nnoremap <leader><leader> <C-^>
+nnoremap <leader>l :ls<cr>
 "Insert the date into a doc
 nmap <leader>vr :vsp $MYVIMRC<cr>
 nnoremap <leader>d :r!date<cr>
@@ -63,7 +106,7 @@ nnoremap<leader>t <C-w>T
 
 nnoremap <leader>s :w<cr>
 inoremap jj <Esc> 
-nnoremap <leader>z :NERDTreeToggle<cr>
+"nnoremap <leader>z :NERDTreeToggle<cr>
 " The following is to paste from the system clipboard
 nnoremap <leader>p "+p
 "the following two lines are to copy the whole file contents and save it to sys clipboard
@@ -73,10 +116,7 @@ vnoremap <leader>y "+y
 "inoremap { {}<Esc>i
 "to jump out of brackets
 "inoremap <C-e> <C-o>A
-"set cursorline
 colorscheme dracula
-
-
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -92,30 +132,12 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
-  autocmd FileType text setlocal textwidth=80
-
-  augroup END
-
-else
-
-  set autoindent		" always set autoindenting on
-
-endif " has("autocmd")
-
 if has('syntax') && has('eval')
   packadd! matchit
 endif
 
 "The following is all for the markdown preview. I can check the help for that
 "plugin if I need reminding.
-let g:instant_markdown_browser = "firefox --new-window"
 let g:instant_markdown_autostart = 0
 
 "Trying to get rid of swap files in Vim. They are cluttering up directories
