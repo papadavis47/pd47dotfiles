@@ -22,6 +22,9 @@ Plugin 'tpope/vim-commentary'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
+Plugin 'szw/vim-maximizer'
+Plugin 'tpope/vim-markdown'
+Plugin 'jtratner/vim-flavored-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -38,6 +41,16 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 " --------------------- END VUNDLE STUFF
+
+" Disable folding with Vim Markdown Plugin
+let g:vim_markdown_folding_disabled = 1
+
+" The following is from thoughtbot Vim video tutorial
+" Make CtrlP use ag for listing the files. Way faster and no useless files.
+let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
+let g:ctrlp_use_caching = 0
+
+"------------------------------------------------------------------------
 syntax on
 filetype plugin indent on
 autocmd BufRead,BufNewFile *.md setlocal textwidth=100
@@ -48,6 +61,10 @@ set gdefault                      " Always assume /g in substituions
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 set scrolloff=3                   " Show 3 lines of context around the cursor.
+"The following helped me with an issue of delay swiching modes
+set ttimeoutlen=50
+"There was a 1 second delay or so before I put this line. Found it on Github.
+
 "The following three lines are to set GFM - github flavored markdown syntax
 augroup markdown
     au!
