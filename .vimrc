@@ -25,6 +25,8 @@ Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
 Plugin 'szw/vim-maximizer'
 Plugin 'tpope/vim-markdown'
 Plugin 'jtratner/vim-flavored-markdown'
+Plugin 'junegunn/vader.vim'
+Plugin 'mrtazz/simplenote.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -85,7 +87,7 @@ let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'javascript']
 autocmd Filetype help nnoremap <buffer>q :q<CR>
 set background=dark
 set nocompatible
-set relativenumber 
+set number relativenumber 
 set softtabstop=2
 set expandtab
 set shiftwidth=2
@@ -97,38 +99,67 @@ autocmd InsertEnter,WinLeave * set nocursorline
 set mouse=a
 "playing with leader values here for the next few lines.
 let mapleader=","
-"I mapped to the space key here. Before I had comma. Trying out diff things.
+"I mapped to the space key above. Before I had comma. Trying out diff things.
+
+" Setting my local leader below.
+let maplocalleader="\\"
+
 noremap <TAB> )
 noremap ` (
 "I learned the following from Ben Orenstein:
 nmap k gk
 nmap j gj
+
+" I learned this one from 'Learn VimScript the Hard Way'
+" It is for moving lines down in normal and visual mode
+noremap - ddp 
+"This is for moving lines up in normal and visual
+noremap _ ddkP
+
+" Clearing current line in normal and going into insert
+nnoremap <leader>c ddO
+" Mapping F6 to Toggle off banner in netrw
+nmap <F6> I
+" Delete a line in insert mode
+inoremap <c-d> <esc>ddi
 " Mapping Q to q when I make that mistake on quitting
 command! Q q "Bind :Q to :q
 " Switch between the last two files
 nnoremap <leader><leader> <C-^>
 nnoremap <leader>l :ls<cr>
 "Insert the date into a doc
-nmap <leader>vr :vsp $MYVIMRC<cr>
 nnoremap <leader>d :r!date<cr>
 nnoremap <F5> "=strftime("%c")<cr>P
-nmap 0 ^
+nnoremap 0 ^
 nnoremap <F5> <C-R>=strftime("%c")<cr>
 nnoremap <leader>e :q<cr>
 nnoremap <leader>nn :noh<cr>
-
+" Below opens netrw from a doc
+nnoremap <leader>v :Vex<cr>
 nnoremap<leader>el :q!<cr>
 " The following is so that I can open a window in it's own tab quickly
 nnoremap<leader>t <C-w>T 
-
+" Open vimrc files in a vertical split
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" Source the vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
+" Quick save - line below
 nnoremap <leader>s :w<cr>
+"The next 4 lines are for exiting insert mode to normal mode
 inoremap jj <Esc> 
+inoremap kk <Esc>
+inoremap jk <Esc>
+inoremap kj <Esc>
 "nnoremap <leader>z :NERDTreeToggle<cr>
 " The following is to paste from the system clipboard
 nnoremap <leader>p "+p
 "the following two lines are to copy the whole file contents and save it to sys clipboard
 nnoremap <leader>sa gg V G "+y<Esc>
 vnoremap <leader>y "+y
+"This is to uppercase a word after typing in insert mode
+inoremap <c-u> <esc>viwUea
+"This is the same as above only normal mode
+nnoremap <leader>= viwUea<esc>
 "inoremap ( ()<Esc>i
 "inoremap { {}<Esc>i
 "to jump out of brackets
@@ -157,16 +188,26 @@ endif
 "plugin if I need reminding.
 let g:instant_markdown_autostart = 0
 
+""""""""" The following is netrw stuff""""""""""""""""""""""
+let g:netrw_altv=1        "open file to the right with v
+let g:netrw_banner=0      "no banner on startup
+let g:netrw_liststyle=3   "use treeview
+let g:netrw_winsize=0     "window sizes are always equal
+let g:netrw_preview=1     "open preview window to the right
+
 "Trying to get rid of swap files in Vim. They are cluttering up directories
 "and I don't need them.
 set noswapfile
 set noundofile
 set nobackup
 
-abbreviate _me jwdavisdeveloper@gmail.com
 " I saw this recently on github in the vim air-line readme
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='bubblegum'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
+"-------------------- Abbreviations -----------------------
+iabbrev ccopy Copyright 2020 John William Davis, all rights reserved. 
+iabbrev _me jwdavisdeveloper@gmail.com

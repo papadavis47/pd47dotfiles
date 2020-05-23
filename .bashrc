@@ -149,3 +149,7 @@ unset __conda_setup
 export PS1="\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;1m\]@\[$(tput sgr0)\]\[\033[38;5;4m\]\h\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;11m\][\w]\[$(tput sgr0)\]\\$: \[$(tput sgr0)\]"
 
 set -o vi
+
+export DENO_INSTALL="/home/papadavis47/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
