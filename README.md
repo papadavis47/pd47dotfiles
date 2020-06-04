@@ -1,3 +1,5 @@
+![Dotfiles / Evolving](https://img.shields.io/badge/Dotfiles-Evolving-blue)
+
 # The Way I Like Things - This is ME
 
 This is where I will store all of my present and future config files. I will be changing and

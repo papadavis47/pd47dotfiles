@@ -27,6 +27,9 @@ Plugin 'tpope/vim-markdown'
 Plugin 'jtratner/vim-flavored-markdown'
 Plugin 'junegunn/vader.vim'
 Plugin 'mrtazz/simplenote.vim'
+Plugin 'christoomey/vim-system-copy'
+Plugin 'tommcdo/vim-exchange'
+Plugin 'vim-scripts/ReplaceWithRegister'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -66,7 +69,9 @@ set scrolloff=3                   " Show 3 lines of context around the cursor.
 "The following helped me with an issue of delay swiching modes
 set ttimeoutlen=50
 "There was a 1 second delay or so before I put this line. Found it on Github.
-
+" This is all about autocompletion below
+set wildmenu
+set wildmode=longest:full,full
 "The following three lines are to set GFM - github flavored markdown syntax
 augroup markdown
     au!
@@ -103,6 +108,11 @@ let mapleader=","
 
 " Setting my local leader below.
 let maplocalleader="\\"
+
+" Note, this must be nmap, not nnoremap
+nmap <leader>gr "*gr
+" The mapping above is for the ReplaceWithRegister plugin
+" I got this idea from Thoughtbot - Extending Vim weekly iteration
 
 noremap <TAB> )
 noremap ` (
@@ -164,7 +174,15 @@ nnoremap <leader>= viwUea<esc>
 "inoremap { {}<Esc>i
 "to jump out of brackets
 "inoremap <C-e> <C-o>A
-colorscheme dracula
+"The following is for the Dracula Pro Package
+packadd! dracula_pro
+
+syntax enable
+
+let g:dracula_colorterm = 0
+
+colorscheme dracula_pro_morbius
+" End Dracula Pro Stuff
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
