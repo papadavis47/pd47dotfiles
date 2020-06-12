@@ -66,6 +66,7 @@ set gdefault                      " Always assume /g in substituions
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 set scrolloff=3                   " Show 3 lines of context around the cursor.
+set splitright                    " always open new splits in on the right
 "The following helped me with an issue of delay swiching modes
 set ttimeoutlen=50
 "There was a 1 second delay or so before I put this line. Found it on Github.
@@ -148,13 +149,14 @@ nnoremap <leader>nn :noh<cr>
 nnoremap <leader>v :Vex<cr>
 nnoremap<leader>el :q!<cr>
 " The following is so that I can open a window in it's own tab quickly
-nnoremap<leader>t <C-w>T 
+nnoremap<leader>o <C-w>T 
 " Open vimrc files in a vertical split
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Source the vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
 " Quick save - line below
 nnoremap <leader>s :w<cr>
+nnoremap <leader>t :vert ter<cr>
 "The next 4 lines are for exiting insert mode to normal mode
 inoremap jj <Esc> 
 inoremap kk <Esc>
