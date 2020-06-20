@@ -19,6 +19,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
@@ -66,7 +67,11 @@ set gdefault                      " Always assume /g in substituions
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 set scrolloff=3                   " Show 3 lines of context around the cursor.
-set splitright                    " always open new splits in on the right
+set splitright                    " always open new vertical splits in on the right
+set splitbelow                    " always open horizontal split below
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
 "The following helped me with an issue of delay swiching modes
 set ttimeoutlen=50
 "There was a 1 second delay or so before I put this line. Found it on Github.
@@ -79,12 +84,20 @@ augroup markdown
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
 
+" The following is to change split size based on focus.
+" I may or may not keep these settings. I found them on thoughbot vim video.
+set winwidth=84
+set winheight=5
+set winminheight=5
+set winheight=999
+
 " Save file on lost focus
 autocmd FocusLost * :wa
 autocmd! BufWritePost ~/.vimrc source %
 "set colorcolumn=+1
 "Working on making more compatible with various file types.
 autocmd FileType text setlocal textwidth=80
+let python_highlight_all=1
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=80
 autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype help nmap <buffer> q :q<cr>
@@ -107,6 +120,10 @@ set mouse=a
 let mapleader=","
 "I mapped to the space key above. Before I had comma. Trying out diff things.
 
+" Setting some search options below
+set incsearch
+set hlsearch
+
 " Setting my local leader below.
 let maplocalleader="\\"
 
@@ -120,6 +137,13 @@ noremap ` (
 "I learned the following from Ben Orenstein:
 nmap k gk
 nmap j gj
+
+" split navigation made easier below:
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " I learned this one from 'Learn VimScript the Hard Way'
 " It is for moving lines down in normal and visual mode
