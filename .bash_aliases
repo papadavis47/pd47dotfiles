@@ -20,3 +20,5 @@ alias sei="cd ~/SEI29/Unit4/"
 alias project="cd ~/lindas-math-game"
 alias ci="code-insiders ."
 alias vimrc="vim ~/.vimrc"
+alias clock="tty-clock -cs -C 1 -S"
+

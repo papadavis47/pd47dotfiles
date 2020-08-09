@@ -96,11 +96,10 @@ autocmd FocusLost * :wa
 autocmd! BufWritePost ~/.vimrc source %
 "set colorcolumn=+1
 "Working on making more compatible with various file types.
-autocmd FileType text setlocal textwidth=80
+autocmd FileType text setlocal textwidth=120
 let python_highlight_all=1
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=80
 autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd Filetype help nmap <buffer> q :q<cr>
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'javascript']
 " Bind `q` to close the buffer for help files
 autocmd Filetype help nnoremap <buffer>q :q<CR>
@@ -118,7 +117,6 @@ autocmd InsertEnter,WinLeave * set nocursorline
 set mouse=a
 "playing with leader values here for the next few lines.
 let mapleader=","
-"I mapped to the space key above. Before I had comma. Trying out diff things.
 
 " Setting some search options below
 set incsearch
@@ -181,12 +179,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " Quick save - line below
 nnoremap <leader>s :w<cr>
 nnoremap <leader>t :vert ter<cr>
-"The next 4 lines are for exiting insert mode to normal mode
+"The next line is for exiting insert mode to normal mode
 inoremap jj <Esc> 
-inoremap kk <Esc>
-inoremap jk <Esc>
-inoremap kj <Esc>
-"nnoremap <leader>z :NERDTreeToggle<cr>
 " The following is to paste from the system clipboard
 nnoremap <leader>p "+p
 "the following two lines are to copy the whole file contents and save it to sys clipboard
@@ -207,7 +201,7 @@ syntax enable
 
 let g:dracula_colorterm = 0
 
-colorscheme dracula_pro_morbius
+colorscheme dracula_pro_buffy
 " End Dracula Pro Stuff
 
 if has("vms")
@@ -248,7 +242,7 @@ set nobackup
 " I saw this recently on github in the vim air-line readme
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='bubblegum'
+let g:airline_theme='behelit'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
