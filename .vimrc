@@ -31,7 +31,7 @@ Plugin 'mrtazz/simplenote.vim'
 Plugin 'christoomey/vim-system-copy'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'vim-scripts/ReplaceWithRegister'
-
+Plugin 'haishanh/night-owl.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -61,6 +61,7 @@ syntax on
 filetype plugin indent on
 autocmd BufRead,BufNewFile *.md setlocal textwidth=100
 autocmd BufRead,BufNewFile *.sh setlocal textwidth=100
+set encoding=UTF-8
 set hidden
 set ruler
 set gdefault                      " Always assume /g in substituions
@@ -96,7 +97,7 @@ autocmd FocusLost * :wa
 autocmd! BufWritePost ~/.vimrc source %
 "set colorcolumn=+1
 "Working on making more compatible with various file types.
-autocmd FileType text setlocal textwidth=120
+"autocmd FileType text setlocal textwidth=120
 let python_highlight_all=1
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=80
 autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
@@ -179,15 +180,21 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " Quick save - line below
 nnoremap <leader>s :w<cr>
 nnoremap <leader>t :vert ter<cr>
+"Next line is for switching buffer to previous
+nnoremap <leader>p :bp<cr>
+"Next line is for switching buffer to next
+nnoremap <leader>n :bn<cr>
 "The next line is for exiting insert mode to normal mode
 inoremap jj <Esc> 
 " The following is to paste from the system clipboard
-nnoremap <leader>p "+p
+nnoremap <leader>u "+p
 "the following two lines are to copy the whole file contents and save it to sys clipboard
 nnoremap <leader>sa gg V G "+y<Esc>
 vnoremap <leader>y "+y
 "This is to uppercase a word after typing in insert mode
 inoremap <c-u> <esc>viwUea
+"Copy the entire buffer into the system register
+nmap <leader>co ggVG*y
 "This is the same as above only normal mode
 nnoremap <leader>= viwUea<esc>
 "inoremap ( ()<Esc>i
@@ -201,7 +208,7 @@ syntax enable
 
 let g:dracula_colorterm = 0
 
-colorscheme dracula_pro_buffy
+colorscheme night-owl
 " End Dracula Pro Stuff
 
 if has("vms")
