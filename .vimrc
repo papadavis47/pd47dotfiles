@@ -59,9 +59,16 @@ let g:ctrlp_use_caching = 0
 
 " The following is for changing the cursor shape based on mode
 " I am so happy this worked! I found it!
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
+if has("autocmd")
+  au VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
+  au InsertEnter,InsertChange *
+    \ if v:insertmode == 'i' | 
+    \   silent execute '!echo -ne "\e[5 q"' | redraw! |
+    \ elseif v:insertmode == 'r' |
+    \   silent execute '!echo -ne "\e[3 q"' | redraw! |
+    \ endif
+  au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+endif
 
 "------------------------------------------------------------------------
 syntax on
@@ -220,6 +227,7 @@ nnoremap <leader>= viwUea<esc>
 "inoremap { {}<Esc>i
 "to jump out of brackets
 "inoremap <C-e> <C-o>A
+
 "The following is for the Dracula Pro Package
 packadd! dracula_pro
 
