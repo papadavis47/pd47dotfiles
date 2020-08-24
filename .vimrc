@@ -32,6 +32,7 @@ Plugin 'christoomey/vim-system-copy'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'vim-scripts/ReplaceWithRegister'
 Plugin 'haishanh/night-owl.vim'
+Plugin 'chriskempson/base16-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -56,20 +57,31 @@ let g:vim_markdown_folding_disabled = 1
 let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
+" The following is for changing the cursor shape based on mode
+" I am so happy this worked! I found it!
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
 "------------------------------------------------------------------------
 syntax on
 filetype plugin indent on
 autocmd BufRead,BufNewFile *.md setlocal textwidth=100
-autocmd BufRead,BufNewFile *.sh setlocal textwidth=100
+autocmd BufRead,BufNewFile *.sh setlocal textwidth=100 
+" I set the line below after install base16 color theme.
+" I can change the below line if necessary
+set termguicolors
 set encoding=UTF-8
 set hidden
 set ruler
 set gdefault                      " Always assume /g in substituions
 set ignorecase                    " Case-insensitive searching.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
-set scrolloff=3                   " Show 3 lines of context around the cursor.
+set scrolloff=4                   " Show 4 lines of context around the cursor.
 set splitright                    " always open new vertical splits in on the right
 set splitbelow                    " always open horizontal split below
+set expandtab                     " Generally set tabs to be spaces
+set wrap                          " Word wrap long lines in windows - will see
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
@@ -79,6 +91,7 @@ set ttimeoutlen=50
 " This is all about autocompletion below
 set wildmenu
 set wildmode=longest:full,full
+set smartindent
 "The following three lines are to set GFM - github flavored markdown syntax
 augroup markdown
     au!
@@ -101,6 +114,7 @@ autocmd! BufWritePost ~/.vimrc source %
 let python_highlight_all=1
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=80
 autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype bash setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'javascript']
 " Bind `q` to close the buffer for help files
 autocmd Filetype help nnoremap <buffer>q :q<CR>
@@ -143,6 +157,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+" Below line taken from Ben Orenstein - open file in current path
+map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 
 " I learned this one from 'Learn VimScript the Hard Way'
 " It is for moving lines down in normal and visual mode
@@ -166,11 +182,14 @@ nnoremap <leader>d :r!date<cr>
 nnoremap <F5> "=strftime("%c")<cr>P
 nnoremap 0 ^
 nnoremap <F5> <C-R>=strftime("%c")<cr>
+" Quit after save
 nnoremap <leader>e :q<cr>
+" Quit - don't save changes
+nnoremap<leader>el :q!<cr>
+" Get ride of highlighting
 nnoremap <leader>nn :noh<cr>
 " Below opens netrw from a doc
 nnoremap <leader>v :Vex<cr>
-nnoremap<leader>el :q!<cr>
 " The following is so that I can open a window in it's own tab quickly
 nnoremap<leader>o <C-w>T 
 " Open vimrc files in a vertical split
