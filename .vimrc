@@ -33,6 +33,8 @@ Plugin 'tommcdo/vim-exchange'
 Plugin 'vim-scripts/ReplaceWithRegister'
 Plugin 'haishanh/night-owl.vim'
 Plugin 'chriskempson/base16-vim'
+Plugin 'nightsense/snow'
+Plugin 'nightsense/stellarized'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -78,6 +80,12 @@ autocmd BufRead,BufNewFile *.sh setlocal textwidth=100
 " I set the line below after install base16 color theme.
 " I can change the below line if necessary
 set termguicolors
+set background=dark
+set nocompatible
+set number relativenumber 
+set softtabstop=2
+set shiftwidth=2
+set autoindent		          " always set autoindenting on
 set encoding=UTF-8
 set hidden
 set ruler
@@ -125,13 +133,6 @@ autocmd Filetype bash setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'javascript']
 " Bind `q` to close the buffer for help files
 autocmd Filetype help nnoremap <buffer>q :q<CR>
-set background=dark
-set nocompatible
-set number relativenumber 
-set softtabstop=2
-set expandtab
-set shiftwidth=2
-set autoindent		" always set autoindenting on
 " The following is for setting and getting rid of cursorline
 autocmd InsertLeave,WinEnter * set cursorline
 autocmd InsertEnter,WinLeave * set nocursorline
@@ -235,7 +236,7 @@ syntax enable
 
 let g:dracula_colorterm = 0
 
-colorscheme night-owl
+colorscheme snow
 " End Dracula Pro Stuff
 
 if has("vms")
@@ -276,7 +277,7 @@ set nobackup
 " I saw this recently on github in the vim air-line readme
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='behelit'
+let g:airline_theme='snow_dark'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
