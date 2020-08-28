@@ -35,6 +35,9 @@ Plugin 'haishanh/night-owl.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'nightsense/snow'
 Plugin 'nightsense/stellarized'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'christoomey/vim-tmux-runner'
+Plugin 'kristijanhusak/vim-carbon-now-sh'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -79,7 +82,8 @@ autocmd BufRead,BufNewFile *.md setlocal textwidth=100
 autocmd BufRead,BufNewFile *.sh setlocal textwidth=100 
 " I set the line below after install base16 color theme.
 " I can change the below line if necessary
-set termguicolors
+" set termguicolors
+" I did indeed have to comment this line. It messed with my colors from tmux.
 set background=dark
 set nocompatible
 set number relativenumber 
@@ -228,6 +232,8 @@ nnoremap <leader>= viwUea<esc>
 "inoremap { {}<Esc>i
 "to jump out of brackets
 "inoremap <C-e> <C-o>A
+" For CarbonNow - make carbon snippets
+vnoremap <F5> :CarbonNowSh<CR>
 
 "The following is for the Dracula Pro Package
 packadd! dracula_pro
@@ -281,6 +287,20 @@ let g:airline_theme='snow_dark'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
+" The following is for Tmux/Vimwindow resizing. I will delete if necessary.
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+" Cool! It appears to be working just fine! 😄
+" end tmux/vim stuff re: window resizing.
+
 "-------------------- Abbreviations -----------------------
 iabbrev ccopy Copyright 2020 John William Davis, all rights reserved. 
 iabbrev _me jwdavisdeveloper@gmail.com
+
+"The following is for dealing with Vim-Tmux-Runner
+let g:VtrStripLeadingWhitespace = 0
+let g:VtrClearEmptyLines = 0
+let g:VtrAppendNewline = 1
