@@ -21,4 +21,5 @@ alias project="cd ~/lindas-math-game"
 alias ci="code-insiders ."
 alias vimrc="vim ~/.vimrc"
 alias clock="tty-clock -cs -C 1 -S"
+alias hackme="sudo openvpn ~/tryhackme/papadavis47.ovpn"
 

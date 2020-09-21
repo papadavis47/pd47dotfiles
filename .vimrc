@@ -38,6 +38,8 @@ Plugin 'nightsense/stellarized'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
 Plugin 'kristijanhusak/vim-carbon-now-sh'
+Plugin 'junegunn/vim-peekaboo'
+Plugin 'myusuf3/numbers.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -110,7 +112,7 @@ set ttimeoutlen=50
 " This is all about autocompletion below
 set wildmenu
 set wildmode=longest:full,full
-set smartindent
+" set smartindent
 "The following three lines are to set GFM - github flavored markdown syntax
 augroup markdown
     au!
@@ -188,18 +190,25 @@ inoremap <c-d> <esc>ddi
 command! Q q "Bind :Q to :q
 " Switch between the last two files
 nnoremap <leader><leader> <C-^>
+" Listing the buffers 
 nnoremap <leader>l :ls<cr>
+" Quickly make a new empty tab
+nnoremap <leader>tt :tabnew<cr>
 "Insert the date into a doc
 nnoremap <leader>d :r!date<cr>
 nnoremap <F5> "=strftime("%c")<cr>P
 nnoremap 0 ^
 nnoremap <F5> <C-R>=strftime("%c")<cr>
+" Save and quite current file
+nnoremap <leader>w :wq<cr>
+" Save and quit all files
+nnoremap <leader>a :wqa<cr>
 " Quit after save
 nnoremap <leader>e :q<cr>
 " Quit - don't save changes
 nnoremap<leader>el :q!<cr>
 " Get ride of highlighting
-nnoremap <leader>nn :noh<cr>
+nnoremap <leader>/ :noh<cr>
 " Below opens netrw from a doc
 nnoremap <leader>v :Vex<cr>
 " The following is so that I can open a window in it's own tab quickly
@@ -234,6 +243,9 @@ nnoremap <leader>= viwUea<esc>
 "inoremap <C-e> <C-o>A
 " For CarbonNow - make carbon snippets
 vnoremap <F5> :CarbonNowSh<CR>
+" The following is for numbers.vim
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F4> :NumbersOnOff<CR>
 
 "The following is for the Dracula Pro Package
 packadd! dracula_pro
@@ -242,7 +254,7 @@ syntax enable
 
 let g:dracula_colorterm = 0
 
-colorscheme snow
+colorscheme jellybeans
 " End Dracula Pro Stuff
 
 if has("vms")

@@ -152,3 +152,5 @@ set -o vi
 
 export DENO_INSTALL="/home/papadavis47/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+export PATH="/opt:$PATH"
+export PATH="$HOME/my_bash_scripts:$PATH"
