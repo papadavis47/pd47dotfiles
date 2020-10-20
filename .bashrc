@@ -154,3 +154,8 @@ export DENO_INSTALL="/home/papadavis47/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="/opt:$PATH"
 export PATH="$HOME/my_bash_scripts:$PATH"
+
+# The following is something I put in after the RealPython Flask tutorial
+# I can change it as needed
+
+source `which activate.sh`

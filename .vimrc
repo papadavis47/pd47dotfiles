@@ -229,7 +229,7 @@ inoremap jj <Esc>
 " The following is to paste from the system clipboard
 nnoremap <leader>u "+p
 "the following two lines are to copy the whole file contents and save it to sys clipboard
-nnoremap <leader>sa gg V G "+y<Esc>
+nnoremap <leader>x gg V G "+y<Esc>
 vnoremap <leader>y "+y
 "This is to uppercase a word after typing in insert mode
 inoremap <c-u> <esc>viwUea
