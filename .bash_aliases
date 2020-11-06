@@ -19,4 +19,4 @@ alias ci="code-insiders ."
 alias vimrc="vim ~/.vimrc"
 alias clock="tty-clock -cs -C 1 -S"
 alias hackme="sudo openvpn ~/tryhackme/papadavis47.ovpn"
-
+alias sqlitestudio="/opt/SQLiteStudio/sqlitestudio&"

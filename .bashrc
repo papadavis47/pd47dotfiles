@@ -158,4 +158,4 @@ export PATH="$HOME/my_bash_scripts:$PATH"
 # The following is something I put in after the RealPython Flask tutorial
 # I can change it as needed
 
-source `which activate.sh`
+#source `which activate.sh`

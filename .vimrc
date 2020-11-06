@@ -40,6 +40,11 @@ Plugin 'christoomey/vim-tmux-runner'
 Plugin 'kristijanhusak/vim-carbon-now-sh'
 Plugin 'junegunn/vim-peekaboo'
 Plugin 'myusuf3/numbers.vim'
+Plugin 'tpope/vim-scriptease'
+Plugin 'michaeljsmith/vim-indent-object'
+"Plugin 'vimwiki/vimwiki'
+" The Vimwiki Plugin conflicted with my tab binding. I may fix it later : )
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -63,7 +68,8 @@ let g:vim_markdown_folding_disabled = 1
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
 let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 let g:ctrlp_use_caching = 0
-
+" I found the following on the github page for CtrlP. Makes sense to me:
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 " The following is for changing the cursor shape based on mode
 " I am so happy this worked! I found it!
 if has("autocmd")
@@ -80,7 +86,8 @@ endif
 "------------------------------------------------------------------------
 syntax on
 filetype plugin indent on
-autocmd BufRead,BufNewFile *.md setlocal textwidth=100
+" Changed .md textwidth to 120 from 100 Oct 24 2020
+autocmd BufRead,BufNewFile *.md setlocal textwidth=120
 autocmd BufRead,BufNewFile *.sh setlocal textwidth=100 
 " I set the line below after install base16 color theme.
 " I can change the below line if necessary
@@ -237,6 +244,9 @@ inoremap <c-u> <esc>viwUea
 nmap <leader>co ggVG*y
 "This is the same as above only normal mode
 nnoremap <leader>= viwUea<esc>
+"Trying this out:
+nnoremap J 5j
+nnoremap K 5k
 "inoremap ( ()<Esc>i
 "inoremap { {}<Esc>i
 "to jump out of brackets
@@ -253,8 +263,8 @@ packadd! dracula_pro
 syntax enable
 
 let g:dracula_colorterm = 0
-
-colorscheme jellybeans
+let g:dracula_italic = 0
+colorscheme apprentice
 " End Dracula Pro Stuff
 
 if has("vms")
