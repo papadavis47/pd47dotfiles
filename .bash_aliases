@@ -20,3 +20,12 @@ alias vimrc="vim ~/.vimrc"
 alias clock="tty-clock -cs -C 1 -S"
 alias hackme="sudo openvpn ~/tryhackme/papadavis47.ovpn"
 alias sqlitestudio="/opt/SQLiteStudio/sqlitestudio&"
+alias psource="source .env/bin/activate"
+alias deact="deactivate"
+# The following are Django shortcuts
+
+alias drunserver="python manage.py runserver"
+alias dshell="python manage.py shell"
+
+# Experimental Stuff
+alias open="xdg-open $1"

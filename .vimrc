@@ -42,8 +42,12 @@ Plugin 'junegunn/vim-peekaboo'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'tpope/vim-scriptease'
 Plugin 'michaeljsmith/vim-indent-object'
-"Plugin 'vimwiki/vimwiki'
-" The Vimwiki Plugin conflicted with my tab binding. I may fix it later : )
+Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-line'
+Plugin 'kana/vim-textobj-entire'
+Plugin 'kana/vim-textobj-indent'
+Plugin 'christoomey/vim-titlecase'
+Plugin 'vim/killersheep'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -220,10 +224,6 @@ nnoremap <leader>/ :noh<cr>
 nnoremap <leader>v :Vex<cr>
 " The following is so that I can open a window in it's own tab quickly
 nnoremap<leader>o <C-w>T 
-" Open vimrc files in a vertical split
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-" Source the vimrc
-nnoremap <leader>sv :source $MYVIMRC<cr>
 " Quick save - line below
 nnoremap <leader>s :w<cr>
 nnoremap <leader>t :vert ter<cr>
@@ -257,6 +257,10 @@ vnoremap <F5> :CarbonNowSh<CR>
 nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
 
+" Move quicker - particularly helpful for help files
+nmap <F12> }
+nmap <F10> {
+
 "The following is for the Dracula Pro Package
 packadd! dracula_pro
 
@@ -264,7 +268,7 @@ syntax enable
 
 let g:dracula_colorterm = 0
 let g:dracula_italic = 0
-colorscheme apprentice
+colorscheme dracula_pro
 " End Dracula Pro Stuff
 
 if has("vms")
@@ -298,9 +302,22 @@ let g:netrw_preview=1     "open preview window to the right
 
 "Trying to get rid of swap files in Vim. They are cluttering up directories
 "and I don't need them.
-set noswapfile
-set noundofile
-set nobackup
+" set noswapfile
+" set noundofile
+" set nobackup
+
+"Learned this about working with React
+"It will help eventually
+
+set backupcopy=yes
+
+"This might be a better solution than the 5 lines above:
+"I learned this from a stackoverflow answer about not cluttering directories
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
+" I am trying to figure out the swap/backup stuff
+" I realized that I had to first create these directories in .vim folder
 
 " I saw this recently on github in the vim air-line readme
 
@@ -317,6 +334,20 @@ nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 " Cool! It appears to be working just fine! 😄
 " end tmux/vim stuff re: window resizing.
+
+"----------------------Playing Around With tpope's commentary ----------
+
+nmap cm <Plug>Commentary
+
+" That is all it took. I now use `cmil` to comment a line. And `cm` work with
+" - all other text objects.
+
+"-----------------------Title Case Mappings------------
+
+let g:titlecase_map_keys = 0
+nmap <leader>gt <Plug>Titlecase
+vmap <leader>gt <Plug>Titlecase
+nmap <leader>gT <Plug>TitlecaseLine
 
 "-------------------- Abbreviations -----------------------
 iabbrev ccopy Copyright 2020 John William Davis, all rights reserved. 
