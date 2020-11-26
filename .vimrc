@@ -49,7 +49,9 @@ Plugin 'christoomey/vim-titlecase'
 Plugin 'vim/killersheep'
 Plugin 'fenetikm/falcon'
 Plugin 'mhartington/oceanic-next'
-
+Plugin 'mhinz/vim-startify'
+Plugin 'mhinz/vim-janah'
+Plugin 'jacoborus/tender'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -95,9 +97,11 @@ filetype plugin indent on
 autocmd BufRead,BufNewFile *.md setlocal textwidth=120
 autocmd BufRead,BufNewFile *.sh setlocal textwidth=100 
 " I set the line below after install base16 color theme.
-" I can change the below line if necessary
-set termguicolors
-" I did indeed have to comment this line. It messed with my colors from tmux.
+" I can change the lines below if necessary
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 set background=dark
 set nocompatible
 set number relativenumber 
