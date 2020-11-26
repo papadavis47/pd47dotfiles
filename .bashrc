@@ -159,3 +159,4 @@ export PATH="$HOME/my_bash_scripts:$PATH"
 # I can change it as needed
 
 #source `which activate.sh`
+export TERM="xterm-256color"

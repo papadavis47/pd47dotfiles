@@ -4,7 +4,6 @@
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -48,6 +47,8 @@ Plugin 'kana/vim-textobj-entire'
 Plugin 'kana/vim-textobj-indent'
 Plugin 'christoomey/vim-titlecase'
 Plugin 'vim/killersheep'
+Plugin 'fenetikm/falcon'
+Plugin 'mhartington/oceanic-next'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -95,7 +96,7 @@ autocmd BufRead,BufNewFile *.md setlocal textwidth=120
 autocmd BufRead,BufNewFile *.sh setlocal textwidth=100 
 " I set the line below after install base16 color theme.
 " I can change the below line if necessary
-" set termguicolors
+set termguicolors
 " I did indeed have to comment this line. It messed with my colors from tmux.
 set background=dark
 set nocompatible
@@ -114,6 +115,12 @@ set splitright                    " always open new vertical splits in on the ri
 set splitbelow                    " always open horizontal split below
 set expandtab                     " Generally set tabs to be spaces
 set wrap                          " Word wrap long lines in windows - will see
+
+" Working on getting italics implemented below:
+" It turns out I did not not need the following two lines.
+" But I am keeping them there anyway incase I need to change.
+" set t_ZH=^[[3m
+" set t_ZR=^[[23m
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
@@ -150,9 +157,18 @@ autocmd Filetype bash setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'javascript']
 " Bind `q` to close the buffer for help files
 autocmd Filetype help nnoremap <buffer>q :q<CR>
+
+" ------------------------------------------------------------
 " The following is for setting and getting rid of cursorline
-autocmd InsertLeave,WinEnter * set cursorline
-autocmd InsertEnter,WinLeave * set nocursorline
+" I have decided to comment it for now and try without the cursor line.
+" Changed November 18, 2020
+" It feels more inline with how I have VS Code currently:
+
+"autocmd InsertLeave,WinEnter * set cursorline
+"autocmd InsertEnter,WinLeave * set nocursorline
+
+"---------------------------------------------------------------
+
 "the line below is for using the mouse once in a while for cursor position
 set mouse=a
 "playing with leader values here for the next few lines.
@@ -226,6 +242,7 @@ nnoremap <leader>v :Vex<cr>
 nnoremap<leader>o <C-w>T 
 " Quick save - line below
 nnoremap <leader>s :w<cr>
+" Open a vertical terminal in vim
 nnoremap <leader>t :vert ter<cr>
 "Next line is for switching buffer to previous
 nnoremap <leader>p :bp<cr>
@@ -247,10 +264,12 @@ nnoremap <leader>= viwUea<esc>
 "Trying this out:
 nnoremap J 5j
 nnoremap K 5k
-"inoremap ( ()<Esc>i
-"inoremap { {}<Esc>i
-"to jump out of brackets
-"inoremap <C-e> <C-o>A
+inoremap ( ()<Esc>i
+inoremap { {}<Esc>i
+inoremap [ []<Esc>i
+inoremap " ""<Esc>i
+" to jump out of brackets
+inoremap <C-e> <C-o>A
 " For CarbonNow - make carbon snippets
 vnoremap <F5> :CarbonNowSh<CR>
 " The following is for numbers.vim
@@ -268,7 +287,11 @@ syntax enable
 
 let g:dracula_colorterm = 0
 let g:dracula_italic = 0
-colorscheme dracula_pro
+let g:falcon_background = 0
+colorscheme falcon
+" Working on trying to get italics below:
+highlight Comment cterm=italic
+
 " End Dracula Pro Stuff
 
 if has("vms")
@@ -321,10 +344,12 @@ set undodir=~/.vim/undo//
 
 " I saw this recently on github in the vim air-line readme
 
+
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='snow_dark'
+let g:airline_theme='minimalist'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
 
 " The following is for Tmux/Vimwindow resizing. I will delete if necessary.
 " automatically rebalance windows on vim resize
@@ -357,3 +382,7 @@ iabbrev _me jwdavisdeveloper@gmail.com
 let g:VtrStripLeadingWhitespace = 0
 let g:VtrClearEmptyLines = 0
 let g:VtrAppendNewline = 1
+
+" Something must have been conflicting with the last line.
+" I had to put the following line down here before it would work.
+set noshowmode
