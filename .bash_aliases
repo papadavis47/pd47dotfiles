@@ -35,3 +35,6 @@ alias open="xdg-open $1"
 alias tmuxn="tmux new-ses -s $1"
 alias newalias="vim ~/.bash_aliases"
 alias newenv="python -m venv venv"
+
+# Personal Folder Navigation
+alias mission="cd ~/MissionPossible; ls"

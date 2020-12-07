@@ -1,0 +1,19 @@
+[alias]
+        aa = add --all
+        st = status
+        l = log
+        gd = diff
+        gds = diff --staged
+
+[user]
+	name = John William Davis
+	email = jwdavisdeveloper@gmail.com
+[credential]
+	helper = cache
+[core]
+	editor = code --wait
+[color]
+	ui = true
+[pull]
+	rebase = false
+

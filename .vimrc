@@ -52,6 +52,9 @@ Plugin 'mhartington/oceanic-next'
 Plugin 'mhinz/vim-startify'
 Plugin 'mhinz/vim-janah'
 Plugin 'jacoborus/tender'
+Plugin 'vimwiki/vimwiki'
+" Set the following as last Plugin Listed 
+Plugin 'ryanoasis/vim-devicons'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -230,17 +233,19 @@ nnoremap <leader>d :r!date<cr>
 nnoremap <F5> "=strftime("%c")<cr>P
 nnoremap 0 ^
 nnoremap <F5> <C-R>=strftime("%c")<cr>
+" Quit all files without saving
+nnoremap<leader>x :qa!<cr>
 " Save and quite current file
 nnoremap <leader>w :wq<cr>
 " Save and quit all files
 nnoremap <leader>a :wqa<cr>
-" Quit after save
+" Quit already saved document
 nnoremap <leader>e :q<cr>
 " Quit - don't save changes
-nnoremap<leader>el :q!<cr>
+nnoremap<leader>q :q!<cr>
 " Get ride of highlighting
 nnoremap <leader>/ :noh<cr>
-" Below opens netrw from a doc
+" Below opens netrw 
 nnoremap <leader>v :Vex<cr>
 " The following is so that I can open a window in it's own tab quickly
 nnoremap<leader>o <C-w>T 
@@ -256,8 +261,6 @@ nnoremap <leader>n :bn<cr>
 inoremap jj <Esc> 
 " The following is to paste from the system clipboard
 nnoremap <leader>u "+p
-"the following two lines are to copy the whole file contents and save it to sys clipboard
-nnoremap <leader>x gg V G "+y<Esc>
 vnoremap <leader>y "+y
 "This is to uppercase a word after typing in insert mode
 inoremap <c-u> <esc>viwUea
@@ -265,13 +268,14 @@ inoremap <c-u> <esc>viwUea
 nmap <leader>co ggVG*y
 "This is the same as above only normal mode
 nnoremap <leader>= viwUea<esc>
+" This is for deleting a buffer
+nnoremap <leader>d :bd<cr>
 "Trying this out:
 nnoremap J 5j
 nnoremap K 5k
 inoremap ( ()<Esc>i
 inoremap { {}<Esc>i
 inoremap [ []<Esc>i
-inoremap " ""<Esc>i
 " to jump out of brackets
 inoremap <C-e> <C-o>A
 " For CarbonNow - make carbon snippets
