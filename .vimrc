@@ -52,7 +52,7 @@ Plugin 'mhartington/oceanic-next'
 Plugin 'mhinz/vim-startify'
 Plugin 'mhinz/vim-janah'
 Plugin 'jacoborus/tender'
-Plugin 'vimwiki/vimwiki'
+Plugin 'elzr/vim-json'
 " Set the following as last Plugin Listed 
 Plugin 'ryanoasis/vim-devicons'
 " All of your Plugins must be added before the following line
@@ -385,6 +385,11 @@ nmap <leader>gT <Plug>TitlecaseLine
 "-------------------- Abbreviations -----------------------
 iabbrev ccopy Copyright 2020 John William Davis, all rights reserved. 
 iabbrev _me jwdavisdeveloper@gmail.com
+
+" This is for the custom copy plugin from Chris Toomey
+" let g:system_copy#copy_command='xclip -sel clipboard'
+" let g:system_copy#paste_command='xclip -sel clipboard -o'
+" We shall see if the above two line work. If not, I will cut it.
 
 "The following is for dealing with Vim-Tmux-Runner
 let g:VtrStripLeadingWhitespace = 0

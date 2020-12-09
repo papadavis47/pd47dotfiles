@@ -146,7 +146,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-source ~/.git-prompt.sh
+# source ~/.git-prompt.sh
 export PS1="\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;1m\]@\[$(tput sgr0)\]\[\033[38;5;4m\]\h\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;11m\][\w]\[$(tput sgr0)\]\\$: \[$(tput sgr0)\]"
 
 set -o vi
