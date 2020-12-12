@@ -53,6 +53,7 @@ Plugin 'mhinz/vim-startify'
 Plugin 'mhinz/vim-janah'
 Plugin 'jacoborus/tender'
 Plugin 'elzr/vim-json'
+Plugin 'wincent/terminus'
 " Set the following as last Plugin Listed 
 Plugin 'ryanoasis/vim-devicons'
 " All of your Plugins must be added before the following line
@@ -80,20 +81,7 @@ let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 " I found the following on the github page for CtrlP. Makes sense to me:
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-" The following is for changing the cursor shape based on mode
-" I am so happy this worked! I found it!
-if has("autocmd")
-  au VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
-  au InsertEnter,InsertChange *
-    \ if v:insertmode == 'i' | 
-    \   silent execute '!echo -ne "\e[5 q"' | redraw! |
-    \ elseif v:insertmode == 'r' |
-    \   silent execute '!echo -ne "\e[3 q"' | redraw! |
-    \ endif
-  au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
-endif
 
-"------------------------------------------------------------------------
 syntax on
 filetype plugin indent on
 " Changed .md textwidth to 120 from 100 Oct 24 2020
@@ -122,6 +110,12 @@ set splitright                    " always open new vertical splits in on the ri
 set splitbelow                    " always open horizontal split below
 set expandtab                     " Generally set tabs to be spaces
 set wrap                          " Word wrap long lines in windows - will see
+
+" Experiment here below:
+set noerrorbells
+set visualbell
+set t_vb=
+" End Experiment
 
 " Working on getting italics implemented below:
 " It turns out I did not not need the following two lines.
@@ -273,9 +267,9 @@ nnoremap <leader>d :bd<cr>
 "Trying this out:
 nnoremap J 5j
 nnoremap K 5k
-inoremap ( ()<Esc>i
-inoremap { {}<Esc>i
-inoremap [ []<Esc>i
+" inoremap ( ()<Esc>i
+" inoremap { {}<Esc>i
+" inoremap [ []<Esc>i
 " to jump out of brackets
 inoremap <C-e> <C-o>A
 " For CarbonNow - make carbon snippets
@@ -296,7 +290,13 @@ syntax enable
 let g:dracula_colorterm = 0
 let g:dracula_italic = 0
 let g:falcon_background = 0
+
+" -----------Favorite Colorschemes-----------------"
+" colorscheme dracula_pro
 colorscheme falcon
+" colorscheme summerfruit256
+
+
 " Working on trying to get italics below:
 highlight Comment cterm=italic
 
@@ -354,6 +354,7 @@ set undodir=~/.vim/undo//
 
 
 let g:airline#extensions#tabline#enabled = 1
+" let g:airline_theme='papercolor'
 let g:airline_theme='minimalist'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
