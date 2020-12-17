@@ -85,7 +85,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 syntax on
 filetype plugin indent on
 " Changed .md textwidth to 120 from 100 Oct 24 2020
-autocmd BufRead,BufNewFile *.md setlocal textwidth=120
+autocmd BufRead,BufNewFile *.md setlocal textwidth=100
 autocmd BufRead,BufNewFile *.sh setlocal textwidth=100 
 " I set the line below after install base16 color theme.
 " I can change the lines below if necessary
@@ -218,10 +218,10 @@ inoremap <c-d> <esc>ddi
 command! Q q "Bind :Q to :q
 " Switch between the last two files
 nnoremap <leader><leader> <C-^>
-" Listing the buffers 
-nnoremap <leader>l :ls<cr>
+" Listing the buffers
+nnoremap <leader>l :ls<cr> 
 " Quickly make a new empty tab
-nnoremap <leader>tt :tabnew<cr>
+nnoremap <leader>tt :tabnew<cr>   
 "Insert the date into a doc
 nnoremap <leader>d :r!date<cr>
 nnoremap <F5> "=strftime("%c")<cr>P
