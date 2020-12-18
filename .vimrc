@@ -1,6 +1,8 @@
-" Reworked .vimrc to use Vundle instead of pathogen
-" Sat 16 May 2020 02:20:16 PM PDT
-" The Vundle stuff begins below
+" Maintained and nurtured with 😍 for my .vimrc
+
+" -----------------------------------------------------------------"
+"                   The VUNDLE STUFF 
+" -----------------------------------------------------------------"
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -70,7 +72,9 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-" --------------------- END VUNDLE STUFF
+"
+" --------------------- END VUNDLE STUFF -------------------------
+
 
 " Disable folding with Vim Markdown Plugin
 let g:vim_markdown_folding_disabled = 1
@@ -79,14 +83,15 @@ let g:vim_markdown_folding_disabled = 1
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
 let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 let g:ctrlp_use_caching = 0
+
 " I found the following on the github page for CtrlP. Makes sense to me:
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 syntax on
 filetype plugin indent on
-" Changed .md textwidth to 120 from 100 Oct 24 2020
 autocmd BufRead,BufNewFile *.md setlocal textwidth=100
 autocmd BufRead,BufNewFile *.sh setlocal textwidth=100 
+
 " I set the line below after install base16 color theme.
 " I can change the lines below if necessary
 if (has("termguicolors"))
@@ -117,21 +122,19 @@ set visualbell
 set t_vb=
 " End Experiment
 
-" Working on getting italics implemented below:
-" It turns out I did not not need the following two lines.
-" But I am keeping them there anyway incase I need to change.
-" set t_ZH=^[[3m
-" set t_ZR=^[[23m
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
-"The following helped me with an issue of delay swiching modes
+
+" The following helped me with an issue of delay swiching modes
 set ttimeoutlen=50
-"There was a 1 second delay or so before I put this line. Found it on Github.
+" There was a 1 second delay or so before I put this line. Found it on Github.
+
 " This is all about autocompletion below
 set wildmenu
 set wildmode=longest:full,full
 " set smartindent
+
 "The following three lines are to set GFM - github flavored markdown syntax
 augroup markdown
     au!
@@ -149,6 +152,7 @@ set winheight=999
 autocmd FocusLost * :wa
 autocmd! BufWritePost ~/.vimrc source %
 "set colorcolumn=+1
+
 "Working on making more compatible with various file types.
 "autocmd FileType text setlocal textwidth=120
 let python_highlight_all=1
@@ -189,91 +193,123 @@ nmap <leader>gr "*gr
 
 noremap <TAB> )
 noremap ` (
+
 "I learned the following from Ben Orenstein:
 nmap k gk
 nmap j gj
 
 " split navigation made easier below:
-"split navigations
+" split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
 " Below line taken from Ben Orenstein - open file in current path
 map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 
 " I learned this one from 'Learn VimScript the Hard Way'
 " It is for moving lines down in normal and visual mode
 noremap - ddp 
-"This is for moving lines up in normal and visual
+
+" This is for moving lines up in normal and visual
 noremap _ ddkP
 
 " Clearing current line in normal and going into insert
 nnoremap <leader>c ddO
+
 " Mapping F6 to Toggle off banner in netrw
 nmap <F6> I
+
 " Delete a line in insert mode
 inoremap <c-d> <esc>ddi
+
 " Mapping Q to q when I make that mistake on quitting
 command! Q q "Bind :Q to :q
+
 " Switch between the last two files
 nnoremap <leader><leader> <C-^>
+
 " Listing the buffers
 nnoremap <leader>l :ls<cr> 
+
 " Quickly make a new empty tab
 nnoremap <leader>tt :tabnew<cr>   
-"Insert the date into a doc
+
+" Insert the date into a doc
 nnoremap <leader>d :r!date<cr>
-nnoremap <F5> "=strftime("%c")<cr>P
+
+" Move to first character in line
 nnoremap 0 ^
-nnoremap <F5> <C-R>=strftime("%c")<cr>
+
 " Quit all files without saving
 nnoremap<leader>x :qa!<cr>
+
 " Save and quite current file
 nnoremap <leader>w :wq<cr>
+
 " Save and quit all files
 nnoremap <leader>a :wqa<cr>
+
 " Quit already saved document
 nnoremap <leader>e :q<cr>
+
 " Quit - don't save changes
 nnoremap<leader>q :q!<cr>
-" Get ride of highlighting
+
+" Get rid of highlighting
 nnoremap <leader>/ :noh<cr>
+
 " Below opens netrw 
 nnoremap <leader>v :Vex<cr>
-" The following is so that I can open a window in it's own tab quickly
+
+" Open a window in it's own tab quickly
 nnoremap<leader>o <C-w>T 
-" Quick save - line below
+
+" Quick save
 nnoremap <leader>s :w<cr>
+
 " Open a vertical terminal in vim
 nnoremap <leader>t :vert ter<cr>
-"Next line is for switching buffer to previous
+
+" Switch buffer to previous
 nnoremap <leader>p :bp<cr>
-"Next line is for switching buffer to next
+
+" Switch buffer to next
 nnoremap <leader>n :bn<cr>
-"The next line is for exiting insert mode to normal mode
+
+" Another exit from insert mode to normal mode
 inoremap jj <Esc> 
-" The following is to paste from the system clipboard
+
+" Yank and paste from the system clipboard
 nnoremap <leader>u "+p
 vnoremap <leader>y "+y
-"This is to uppercase a word after typing in insert mode
+
+" This is to uppercase a word after typing in insert mode
 inoremap <c-u> <esc>viwUea
-"Copy the entire buffer into the system register
+
+" Copy the entire buffer into the system register
 nmap <leader>co ggVG*y
+
 "This is the same as above only normal mode
 nnoremap <leader>= viwUea<esc>
+
 " This is for deleting a buffer
 nnoremap <leader>d :bd<cr>
-"Trying this out:
+
+" Trying this out:
 nnoremap J 5j
 nnoremap K 5k
+
 " inoremap ( ()<Esc>i
 " inoremap { {}<Esc>i
 " inoremap [ []<Esc>i
 " to jump out of brackets
 inoremap <C-e> <C-o>A
+
 " For CarbonNow - make carbon snippets
 vnoremap <F5> :CarbonNowSh<CR>
+
 " The following is for numbers.vim
 nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
@@ -282,7 +318,7 @@ nnoremap <F4> :NumbersOnOff<CR>
 nmap <F12> }
 nmap <F10> {
 
-"The following is for the Dracula Pro Package
+" The following is for the Dracula Pro Package
 packadd! dracula_pro
 
 syntax enable
@@ -293,14 +329,17 @@ let g:falcon_background = 0
 
 " -----------Favorite Colorschemes-----------------"
 " colorscheme dracula_pro
-colorscheme falcon
-" colorscheme summerfruit256
+" colorscheme falcon
+colorscheme summerfruit256
 
+"Comment and uncomment as needed
+" --------------------------------------------------"
 
 " Working on trying to get italics below:
 highlight Comment cterm=italic
 
-" End Dracula Pro Stuff
+" ---------- End Dracula Pro Stuff -------------"
+
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -320,9 +359,9 @@ if has('syntax') && has('eval')
   packadd! matchit
 endif
 
-"The following is all for the markdown preview. I can check the help for that
-"plugin if I need reminding.
+"The following is all for the markdown preview.
 let g:instant_markdown_autostart = 0
+
 
 """"""""" The following is netrw stuff""""""""""""""""""""""
 let g:netrw_altv=1        "open file to the right with v
@@ -331,18 +370,15 @@ let g:netrw_liststyle=3   "use treeview
 let g:netrw_winsize=0     "window sizes are always equal
 let g:netrw_preview=1     "open preview window to the right
 
-"Trying to get rid of swap files in Vim. They are cluttering up directories
-"and I don't need them.
 " set noswapfile
 " set noundofile
 " set nobackup
 
-"Learned this about working with React
-"It will help eventually
-
+" Learned this about working with React
+" It will help eventually
 set backupcopy=yes
 
-"This might be a better solution than the 5 lines above:
+"This might be a better solution than the 3 lines above:
 "I learned this from a stackoverflow answer about not cluttering directories
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
@@ -352,22 +388,22 @@ set undodir=~/.vim/undo//
 
 " I saw this recently on github in the vim air-line readme
 
-
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_theme='papercolor'
-let g:airline_theme='minimalist'
+let g:airline_theme='papercolor'
+" let g:airline_theme='minimalist'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 
-" The following is for Tmux/Vimwindow resizing. I will delete if necessary.
-" automatically rebalance windows on vim resize
+" The following is for Tmux/Vimwindow resizing.
+" Automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 " Cool! It appears to be working just fine! 😄
-" end tmux/vim stuff re: window resizing.
+" End tmux/vim stuff re: window resizing.
+
 
 "----------------------Playing Around With tpope's commentary ----------
 
@@ -390,7 +426,7 @@ iabbrev _me jwdavisdeveloper@gmail.com
 " This is for the custom copy plugin from Chris Toomey
 " let g:system_copy#copy_command='xclip -sel clipboard'
 " let g:system_copy#paste_command='xclip -sel clipboard -o'
-" We shall see if the above two line work. If not, I will cut it.
+" We shall see if the above two lines work for me. If not, I will comment it.
 
 "The following is for dealing with Vim-Tmux-Runner
 let g:VtrStripLeadingWhitespace = 0
