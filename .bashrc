@@ -126,11 +126,6 @@ fi
 export EDITOR=vim
 export MYVIMRC=~/.vimrc
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -151,11 +146,6 @@ export PS1="\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;1m\]@\[$(tput sgr0)\]\
 
 set -o vi
 
-export DENO_INSTALL="/home/papadavis47/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-export PATH="/opt:$PATH"
-export PATH="$HOME/my_bash_scripts:$PATH"
-export PATH="$HOME/pythonscripts:$PATH"
 
 # The following is something I put in after the RealPython Flask tutorial
 # I can change it as needed
