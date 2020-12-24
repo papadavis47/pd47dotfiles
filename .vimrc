@@ -297,6 +297,10 @@ nnoremap <leader>= viwUea<esc>
 " This is for deleting a buffer
 nnoremap <leader>d :bd<cr>
 
+" Format entire document
+" This uses the 'kana/vim-textobj-entire' obj to work
+nmap <leader>f gqae
+
 " Trying this out:
 nnoremap J 5j
 nnoremap K 5k
@@ -328,9 +332,9 @@ let g:dracula_italic = 0
 let g:falcon_background = 0
 
 " -----------Favorite Colorschemes-----------------"
-" colorscheme dracula_pro
+colorscheme dracula_pro
 " colorscheme falcon
-colorscheme summerfruit256
+" colorscheme summerfruit256
 
 "Comment and uncomment as needed
 " --------------------------------------------------"
@@ -389,8 +393,8 @@ set undodir=~/.vim/undo//
 " I saw this recently on github in the vim air-line readme
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='papercolor'
-" let g:airline_theme='minimalist'
+" let g:airline_theme='papercolor'
+let g:airline_theme='minimalist'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
