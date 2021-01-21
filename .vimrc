@@ -332,9 +332,11 @@ let g:dracula_italic = 0
 let g:falcon_background = 0
 
 " -----------Favorite Colorschemes-----------------"
-colorscheme dracula_pro
+" colorscheme dracula_pro
 " colorscheme falcon
 " colorscheme summerfruit256
+" colorscheme simpleandfriendly
+colorscheme github
 
 "Comment and uncomment as needed
 " --------------------------------------------------"

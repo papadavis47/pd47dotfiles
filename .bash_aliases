@@ -18,27 +18,33 @@ alias md="mkdir"
 alias ci="code-insiders ."
 alias vimrc="vim ~/.vimrc"
 alias bashrc="vim ~/.bashrc"
+alias newalias="vim ~/.bash_aliases"
 alias bsource="source ~/.bashrc"
 alias clock="tty-clock -cs -C 1 -S"
 alias hackme="sudo openvpn ~/tryhackme/papadavis47.ovpn"
 alias sqlitestudio="/opt/SQLiteStudio/sqlitestudio&"
-alias psource="source venv/bin/activate"
-alias deact="deactivate"
-# The following are Django shortcuts
 
+# The following are Django shortcuts
 alias dserv="python manage.py runserver"
 alias dshell="python manage.py shell"
 alias dproject="django-admin startproject project"
 
 # Experimental Stuff
 alias open="xdg-open $1"
+alias practice="ipython -i --no-banner $1"
 
 # Tmux Aliases
 alias tmuxn="tmux new-ses -s $1"
-alias newalias="vim ~/.bash_aliases"
-alias newenv="python -m venv venv"
+
+# Python Aliases
+alias newenv="python -m venv ./venv"
+alias psource="source ./venv/bin/activate"
+alias deact="deactivate"
 
 # Personal Folder Navigation
 alias mission="cd ~/MissionPossible; ls"
 alias dotfiles="cd ~/pd47dotfiles; ls -la"
 
+# Script Helpers
+alias execute="chmod +x $1"
+alias paths="echo $PATH | tr \: \\n"
