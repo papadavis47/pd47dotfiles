@@ -56,6 +56,7 @@ Plugin 'mhinz/vim-janah'
 Plugin 'jacoborus/tender'
 Plugin 'elzr/vim-json'
 Plugin 'wincent/terminus'
+Plugin 'sts10/vim-pink-moon'
 " Set the following as last Plugin Listed 
 Plugin 'ryanoasis/vim-devicons'
 " All of your Plugins must be added before the following line
@@ -230,6 +231,9 @@ command! Q q "Bind :Q to :q
 " Switch between the last two files
 nnoremap <leader><leader> <C-^>
 
+" Switch between tabs
+nnoremap <leader>x :tabnext<cr>
+
 " Listing the buffers
 nnoremap <leader>l :ls<cr> 
 
@@ -336,7 +340,9 @@ let g:falcon_background = 0
 " colorscheme falcon
 " colorscheme summerfruit256
 " colorscheme simpleandfriendly
-colorscheme github
+" colorscheme dracula_pro_van_helsing
+" colorscheme github
+colorscheme pink-moon
 
 "Comment and uncomment as needed
 " --------------------------------------------------"
