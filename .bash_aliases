@@ -49,3 +49,6 @@ alias dotfiles="cd ~/pd47dotfiles; ls -la"
 # Script Helpers
 alias execute="chmod +x $1"
 alias paths="echo $PATH | tr \: \\n"
+
+# Gatsby
+alias gd="gatsby develop"

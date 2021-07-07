@@ -23,7 +23,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dracula/vim', { 'name': 'dracula' }
-Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
+Plugin 'instant-markdown/vim-instant-markdown', {'rtp': 'after'}
 Plugin 'szw/vim-maximizer'
 Plugin 'tpope/vim-markdown'
 Plugin 'jtratner/vim-flavored-markdown'
@@ -246,14 +246,11 @@ nnoremap <leader>d :r!date<cr>
 " Move to first character in line
 nnoremap 0 ^
 
-" Quit all files without saving
-nnoremap<leader>x :qa!<cr>
-
 " Save and quite current file
 nnoremap <leader>w :wq<cr>
 
-" Save and quit all files
-nnoremap <leader>a :wqa<cr>
+" Save and quit 
+nnoremap <leader>a :wq<cr>
 
 " Quit already saved document
 nnoremap <leader>e :q<cr>
