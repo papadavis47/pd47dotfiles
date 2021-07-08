@@ -250,13 +250,14 @@ nnoremap 0 ^
 nnoremap <leader>w :wq<cr>
 
 " Save and quit 
-nnoremap <leader>a :wq<cr>
+nnoremap <leader>a :qa<cr>
 
 " Quit already saved document
 nnoremap <leader>e :q<cr>
 
 " Quit - don't save changes
 nnoremap<leader>q :q!<cr>
+" Does not work on VS Code - yet
 
 " Get rid of highlighting
 nnoremap <leader>/ :noh<cr>
@@ -297,6 +298,9 @@ nnoremap <leader>= viwUea<esc>
 
 " This is for deleting a buffer
 nnoremap <leader>d :bd<cr>
+
+" Save All
+nnoremap <leader>z :wa<cr>
 
 " Format entire document
 " This uses the 'kana/vim-textobj-entire' obj to work
