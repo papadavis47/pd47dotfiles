@@ -15,8 +15,8 @@ alias python3='/usr/bin/python3'
 alias pip3='/usr/bin/pip3'
 alias psql="sudo -u postgres psql"
 alias pgserver="sudo -u postgres service postgresql start"
-alias md="mkdir"
-alias ci="code-insiders $1"
+alias md="mkdir $1"
+alias codei="code-insiders $1"
 alias vimrc="vim ~/.vimrc"
 alias bashrc="vim ~/.bashrc"
 alias newalias="vim ~/.bash_aliases"
@@ -52,3 +52,4 @@ alias paths="echo $PATH | tr \: \\n"
 
 # Gatsby
 alias gd="gatsby develop"
+

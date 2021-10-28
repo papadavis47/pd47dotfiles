@@ -57,6 +57,8 @@ Plugin 'jacoborus/tender'
 Plugin 'elzr/vim-json'
 Plugin 'wincent/terminus'
 Plugin 'sts10/vim-pink-moon'
+Plugin 'prettier/vim-prettier'
+Plugin 'rust-lang/rust.vim'
 " Set the following as last Plugin Listed 
 Plugin 'ryanoasis/vim-devicons'
 " All of your Plugins must be added before the following line
@@ -88,7 +90,7 @@ let g:ctrlp_use_caching = 0
 " I found the following on the github page for CtrlP. Makes sense to me:
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
-syntax on
+syntax enable
 filetype plugin indent on
 autocmd BufRead,BufNewFile *.md setlocal textwidth=100
 autocmd BufRead,BufNewFile *.sh setlocal textwidth=100 
@@ -310,9 +312,9 @@ nmap <leader>f gqae
 nnoremap J 5j
 nnoremap K 5k
 
-" inoremap ( ()<Esc>i
-" inoremap { {}<Esc>i
-" inoremap [ []<Esc>i
+inoremap ( ()<Esc>i
+inoremap { {}<Esc>i
+inoremap [ []<Esc>i
 " to jump out of brackets
 inoremap <C-e> <C-o>A
 
@@ -327,10 +329,9 @@ nnoremap <F4> :NumbersOnOff<CR>
 nmap <F12> }
 nmap <F10> {
 
+
 " The following is for the Dracula Pro Package
 packadd! dracula_pro
-
-syntax enable
 
 let g:dracula_colorterm = 0
 let g:dracula_italic = 0
@@ -341,9 +342,9 @@ let g:falcon_background = 0
 " colorscheme falcon
 " colorscheme summerfruit256
 " colorscheme simpleandfriendly
-" colorscheme dracula_pro_van_helsing
+colorscheme dracula_pro_van_helsing
 " colorscheme github
-colorscheme pink-moon
+" colorscheme pink-moon
 
 "Comment and uncomment as needed
 " --------------------------------------------------"
@@ -374,6 +375,13 @@ endif
 
 "The following is all for the markdown preview.
 let g:instant_markdown_autostart = 0
+
+"This is for the prettier config:
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 
 
 """"""""" The following is netrw stuff""""""""""""""""""""""
