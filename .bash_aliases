@@ -24,6 +24,7 @@ alias bsource="source ~/.bashrc"
 alias clock="tty-clock -cs -C 1 -S"
 alias hackme="sudo openvpn ~/tryhackme/papadavis47.ovpn"
 alias sqlitestudio="/opt/SQLiteStudio/sqlitestudio&"
+alias t="tree"
 
 # The following are Django shortcuts
 alias dserv="python manage.py runserver"
@@ -53,3 +54,5 @@ alias paths="echo $PATH | tr \: \\n"
 # Gatsby
 alias gd="gatsby develop"
 
+# Rust version of cat
+alias bat="batcat"

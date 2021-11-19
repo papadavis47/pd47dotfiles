@@ -251,7 +251,7 @@ nnoremap 0 ^
 " Save and quite current file
 nnoremap <leader>w :wq<cr>
 
-" Save and quit 
+" Quit all
 nnoremap <leader>a :qa<cr>
 
 " Quit already saved document
@@ -285,7 +285,7 @@ nnoremap <leader>n :bn<cr>
 " Another exit from insert mode to normal mode
 inoremap jj <Esc> 
 
-" Yank and paste from the system clipboard
+" Yank to and paste from - the system clipboard
 nnoremap <leader>u "+p
 vnoremap <leader>y "+y
 
@@ -311,6 +311,10 @@ nmap <leader>f gqae
 " Trying this out:
 nnoremap J 5j
 nnoremap K 5k
+
+" This is for closing brackets and quotes
+
+inoremap " ""<Esc>i
 
 inoremap ( ()<Esc>i
 inoremap { {}<Esc>i
@@ -339,10 +343,10 @@ let g:falcon_background = 0
 
 " -----------Favorite Colorschemes-----------------"
 " colorscheme dracula_pro
-" colorscheme falcon
+colorscheme falcon
 " colorscheme summerfruit256
 " colorscheme simpleandfriendly
-colorscheme dracula_pro_van_helsing
+" colorscheme dracula_pro_van_helsing
 " colorscheme github
 " colorscheme pink-moon
 
@@ -428,7 +432,10 @@ nnoremap <leader>= :wincmd =<cr>
 
 "----------------------Playing Around With tpope's commentary ----------
 
-nmap cm <Plug>Commentary
+" nmap cm <Plug>Commentary
+
+" On November 19, 2021 - I turned this off - for now : ) It was just an
+" experiment I may do again later. 
 
 " That is all it took. I now use `cmil` to comment a line. And `cm` work with
 " - all other text objects.

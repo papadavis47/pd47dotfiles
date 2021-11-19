@@ -122,7 +122,7 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
 
-export EDITOR=vim
+export EDITOR="code -w"
 export MYVIMRC=~/.vimrc
 
 
