@@ -1,0 +1,188 @@
+{
+  "python.terminal.executeInFileDir": true,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "vim.useSystemClipboard": true,
+  "zenMode.fullScreen": true,
+  "git.confirmSync": false,
+  "editor.fontSize": 16,
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.letterSpacing": 1,
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "[pug]": {
+    "editor.tabSize": 2
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.formatting.provider": "black",
+  "workbench.editor.restoreViewState": false,
+  "window.restoreWindows": "none",
+  "explorer.confirmDragAndDrop": false,
+  "extensions.ignoreRecommendations": true,
+  "vsicons.dontShowNewVersionMessage": false,
+  "editor.renderWhitespace": "all",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "java.jdt.ls.java.home": "/usr/lib/jvm/jdk-11.0.2",
+  "java.configuration.checkProjectSettingsExclusions": false,
+  "python.jediEnabled": false,
+  "vim.handleKeys": {
+    "<C-d>": false,
+    "<C-w>": false,
+    "<C-k>": false,
+    "<C-e>": false,
+    "<C-n>": false,
+    "<C-f>": false,
+    "<C-l>": false,
+    "shift+ctrl+[": false,
+    "shift+ctrl+]": false,
+    "<C-m>": false
+  },
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.replace": "underline-thin",
+  "vim.cursorStylePerMode.visual": "line",
+  "vim.cursorStylePerMode.visualblock": "line",
+  "vim.cursorStylePerMode.visualline": "block",
+  "vim.highlightedyank.enable": true,
+  "vim.scroll": 15,
+  "vim.vimrc.path": "~/.vimrc",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Escape>"]
+    }
+  ],
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.minimap.renderCharacters": false,
+  "python.languageServer": "Pylance",
+  "editor.linkedEditing": true,
+  "python.showStartPage": false,
+  "editor.cursorWidth": 2,
+  "editor.renderLineHighlight": "none",
+  "python.linting.enabled": false,
+  "python.linting.pylintEnabled": false,
+  "python.linting.pylintUseMinimalCheckers": false,
+  "java.semanticHighlighting.enabled": true,
+  "python.pythonPath": "/usr/bin/python3",
+  "terminal.integrated.shell.linux": "/bin/bash",
+  "terminal.integrated.cursorBlinking": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "postcss": "css"
+    // "django-html": "html"
+  },
+  "files.associations": {
+    "**/*.html": "html",
+    "**/templates/**/*.html": "django-html",
+    "**/templates/**/*": "django-txt",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+  },
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingModuleSource": "none"
+  },
+  "keyboard.dispatch": "keyCode",
+  "files.exclude": {
+    "**/__pycache__": true,
+    "venv/": true
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "prettier.printWidth": 100,
+  "editor.multiCursorModifier": "alt",
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 100,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[mdx]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "editor.wordWrapColumn": 100,
+  "python.linting.lintOnSave": false,
+  "python.insidersChannel": "weekly",
+  "python.analysis.autoImportCompletions": false,
+  "python.analysis.autoSearchPaths": false,
+  "vim.vimrc.enable": true,
+  "vim.leader": ",",
+  "workbench.editor.tabCloseButton": "off",
+  "liveshare.authenticationProvider": "GitHub",
+  "prettier.jsxSingleQuote": true,
+  "prettier.quoteProps": "preserve",
+  "workbench.colorTheme": "Nord",
+  "eslint.options": {},
+  "terminal.integrated.tabs.enabled": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+  "editor.formatOnType": true,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.horizontalScrollbarSize": 16,
+  "security.workspace.trust.untrustedFiles": "open",
+  "cSpell.userWords": ["destructure", "flexitarian", "frontmatter", "papadavis", "prismjs"],
+  "prettier.proseWrap": "always",
+  "html.format.templating": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "powermode.enabled": true,
+  "powermode.enableShake": false,
+  "powermode.enableStatusBarComboCounter": false,
+  "powermode.presets": "fireworks",
+  "terminal.integrated.defaultLocation": "editor",
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "emmet.showSuggestionsAsSnippets": true,
+  "html-css-class-completion.enableEmmetSupport": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "bracket-pair-colorizer-2.depreciation-notice": false,
+  "python.defaultInterpreterPath": "/usr/bin/python3",
+  "workbench.iconTheme": "city-lights-icons-vsc-light",
+  "workbench.productIconTheme": "ic-drkryz-thm",
+  // Hide Everything
+  "workbench.sideBar.location": "right",
+  "window.menuBarVisibility": "toggle",
+  "workbench.activityBar.visible": false,
+
+  // End Hide Everything
+  // Better Defaults from Caleb Forzio:
+  "window.newWindowDimensions": "inherit",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  //  Silence the noise - by Caleb Forzio
+  "editor.lightbulb.enabled": false,
+  "breadcrumbs.enabled": false,
+  "editor.overviewRulerBorder": false,
+  "workbench.tips.enabled": false,
+  "editor.colorDecorators": false,
+  "problems.decorations.enabled": false,
+  "editor.renderControlCharacters": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.lineHeight": 24
+}

@@ -57,6 +57,7 @@ Plugin 'jacoborus/tender'
 Plugin 'elzr/vim-json'
 Plugin 'wincent/terminus'
 Plugin 'sts10/vim-pink-moon'
+Plugin 'preservim/nerdtree'
 Plugin 'prettier/vim-prettier'
 Plugin 'rust-lang/rust.vim'
 " Set the following as last Plugin Listed 
@@ -235,6 +236,12 @@ nnoremap <leader><leader> <C-^>
 
 " Switch between tabs
 nnoremap <leader>x :tabnext<cr>
+
+" Toggle NERDTree
+nnoremap <leader>. :NERDTreeToggle<cr>
+
+" Close NERDTree
+""nnoremap <leader>m :NERDTreeClose<cr>
 
 " Listing the buffers
 nnoremap <leader>l :ls<cr> 
@@ -448,7 +455,7 @@ vmap <leader>gt <Plug>Titlecase
 nmap <leader>gT <Plug>TitlecaseLine
 
 "-------------------- Abbreviations -----------------------
-iabbrev ccopy Copyright 2020 John William Davis, all rights reserved. 
+iabbrev ccopy Copyright 2021 John William Davis, all rights reserved. 
 iabbrev _me jwdavisdeveloper@gmail.com
 
 " This is for the custom copy plugin from Chris Toomey
