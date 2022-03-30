@@ -2,7 +2,7 @@
 alias c='clear'
 alias e='exit'
 alias v='vim'
-alias projects='cd ~/GitHub_Projects/'
+alias projects='cd ~/priority-projects/'
 alias myapp='cd ~/Github_Projects/PAPA'
 alias ..='cd ../'
 alias ...='cd ../../'
