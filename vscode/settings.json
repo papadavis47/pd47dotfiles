@@ -49,7 +49,9 @@
     "<C-l>": false,
     "shift+ctrl+[": false,
     "shift+ctrl+]": false,
-    "<C-m>": false
+    "<C-m>": false,
+    "<C-x>": false,
+    "<C-b>": false
   },
   "vim.cursorStylePerMode.insert": "line",
   "vim.cursorStylePerMode.normal": "block",
@@ -79,7 +81,7 @@
   "python.linting.pylintUseMinimalCheckers": false,
   "java.semanticHighlighting.enabled": true,
   "python.pythonPath": "/usr/bin/python3",
-  "terminal.integrated.shell.linux": "/bin/bash",
+  // "terminal.integrated.shell.linux": "/bin/bash",
   "terminal.integrated.cursorBlinking": true,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
@@ -130,7 +132,7 @@
   "liveshare.authenticationProvider": "GitHub",
   "prettier.jsxSingleQuote": true,
   "prettier.quoteProps": "preserve",
-  "workbench.colorTheme": "Nord",
+  "workbench.colorTheme": "Dracula Pro",
   "eslint.options": {},
   "terminal.integrated.tabs.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -163,7 +165,8 @@
   "bracket-pair-colorizer-2.depreciation-notice": false,
   "python.defaultInterpreterPath": "/usr/bin/python3",
   "workbench.iconTheme": "city-lights-icons-vsc-light",
-  "workbench.productIconTheme": "ic-drkryz-thm",
+  // "workbench.productIconTheme": "ic-drkryz-thm",
+
   // Hide Everything
   "workbench.sideBar.location": "right",
   "window.menuBarVisibility": "toggle",
@@ -184,5 +187,25 @@
   "problems.decorations.enabled": false,
   "editor.renderControlCharacters": false,
   "editor.hideCursorInOverviewRuler": true,
-  "editor.lineHeight": 24
+  "editor.lineHeight": 24,
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "/bin/bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh"
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    }
+  }
 }
