@@ -26,6 +26,15 @@ alias hackme="sudo openvpn ~/tryhackme/papadavis47.ovpn"
 alias sqlitestudio="/opt/SQLiteStudio/sqlitestudio&"
 alias t="tree"
 
+# For backup
+alias bkupcode="cp -i keybindings.json settings.json ~/pd47dotfiles/vscode/"
+
+# Git aliases
+alias gst="git status"
+alias ga="git add ."
+alias gl="git log"
+alias gcm="git commit -m $1"
+
 # The following are Django shortcuts
 alias dserv="python manage.py runserver"
 alias dshell="python manage.py shell"
