@@ -10,11 +10,11 @@
   // Panels
 
   {
-    "key": "ctrl+k ctrl+e",
+    "key": "ctrl+e",
     "command": "workbench.view.explorer"
   },
   {
-    "key": "ctrl+e",
+    "key": "ctrl+i",
     "command": "workbench.action.focusActiveEditorGroup"
   },
   {
@@ -22,7 +22,7 @@
     "command": "workbench.extensions.action.showInstalledExtensions"
   },
   {
-    "key": "ctrl+k ctrl+b",
+    "key": "ctrl+b",
     "command": "workbench.action.toggleSidebarVisibility"
   },
   {
@@ -216,7 +216,31 @@
     "key": "ctrl+m ctrl+backspace",
     "command": "editor.emmet.action.removeTag",
     "when": "editorTextFocus"
-  }
+  },
+  {
+    "key": "ctrl+shift+backspace",
+    "command": "markdown.extension.onBackspaceKey",
+    "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadonly && !suggestWidgetVisible && editorLangId == 'markdown' && vim.mode != 'CommandlineInProgress' && vim.mode != 'EasyMotionInputMode' && vim.mode != 'EasyMotionMode' && vim.mode != 'Normal' && vim.mode != 'Replace' && vim.mode != 'SearchInProgressMode' && vim.mode != 'SurroundInputMode' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine'"
+  },
+  {
+    "key": "backspace",
+    "command": "-markdown.extension.onBackspaceKey",
+    "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadonly && !suggestWidgetVisible && editorLangId == 'markdown' && vim.mode != 'CommandlineInProgress' && vim.mode != 'EasyMotionInputMode' && vim.mode != 'EasyMotionMode' && vim.mode != 'Normal' && vim.mode != 'Replace' && vim.mode != 'SearchInProgressMode' && vim.mode != 'SurroundInputMode' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine'"
+  },
 
+  // The following is to emulate my .vimrc
+  // Change made on May 4, 2022
+
+  {
+    "key": "alt+j",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+
+  {
+    "key": "alt+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  }
   //
 ]

@@ -340,6 +340,25 @@ nnoremap <F4> :NumbersOnOff<CR>
 nmap <F12> }
 nmap <F10> {
 
+" Testing out some new mapping involving moving text
+" May 2022
+" This is not working now - but I will figure it out
+nnoremap <A-k> :m .-2<CR>==
+nnoremap <A-j> :m .+1<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
+"Experiment to get the above lines to work 
+let c='a'
+while c <= 'z'
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
+endw
+
+set timeout ttimeoutlen=50
 
 " The following is for the Dracula Pro Package
 packadd! dracula_pro
@@ -350,10 +369,10 @@ let g:falcon_background = 0
 
 " -----------Favorite Colorschemes-----------------"
 " colorscheme dracula_pro
-colorscheme falcon
+" colorscheme falcon
 " colorscheme summerfruit256
 " colorscheme simpleandfriendly
-" colorscheme dracula_pro_van_helsing
+colorscheme dracula_pro_van_helsing
 " colorscheme github
 " colorscheme pink-moon
 

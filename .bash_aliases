@@ -27,7 +27,8 @@ alias sqlitestudio="/opt/SQLiteStudio/sqlitestudio&"
 alias t="tree"
 
 # For backup
-alias bkupcode="cp -i keybindings.json settings.json ~/pd47dotfiles/vscode/"
+alias bkupcode="cp -i ~/.config/Code/User/keybindings.json ~/.config/Code/User/settings.json ~/pd47dotfiles/vscode/"
+alias bkupprofile="cp -i ~/.bash_profile ~/pd47dotfiles/"
 
 # Git aliases
 alias gst="git status"

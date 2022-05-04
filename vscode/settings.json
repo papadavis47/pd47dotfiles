@@ -37,7 +37,6 @@
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "java.jdt.ls.java.home": "/usr/lib/jvm/jdk-11.0.2",
-  "java.configuration.checkProjectSettingsExclusions": false,
   "python.jediEnabled": false,
   "vim.handleKeys": {
     "<C-d>": false,
@@ -183,7 +182,7 @@
   "breadcrumbs.enabled": false,
   "editor.overviewRulerBorder": false,
   "workbench.tips.enabled": false,
-  "editor.colorDecorators": false,
+  "editor.colorDecorators": true,
   "problems.decorations.enabled": false,
   "editor.renderControlCharacters": false,
   "editor.hideCursorInOverviewRuler": true,

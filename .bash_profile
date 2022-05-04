@@ -7,6 +7,7 @@ export PATH="/opt:$PATH"
 export PATH="$HOME/my_bash_scripts:$PATH"
 export PATH="$HOME/pythonscripts:$PATH"
 export PATH="$HOME/GitHub_Projects/py_tools:$PATH"
+export PATH="/snap/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -22,3 +23,4 @@ fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+. "$HOME/.cargo/env"
