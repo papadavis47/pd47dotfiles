@@ -11,8 +11,6 @@ alias hello='echo "Hello World!"'
 alias upgrade='sudo apt update && sudo apt upgrade'
 alias jup='jupyter notebook'
 alias iceweasel='firefox&'
-alias python3='/usr/bin/python3'
-alias pip3='/usr/bin/pip3'
 alias psql="sudo -u postgres psql"
 alias pgserver="sudo -u postgres service postgresql start"
 alias md="mkdir $1"
@@ -49,7 +47,9 @@ alias practice="ipython -i --no-banner $1"
 alias tmuxn="tmux new-ses -s $1"
 
 # Python Aliases
-alias newenv="python -m venv ./venv"
+alias python='/usr/bin/python3'
+alias pip='/usr/bin/pip3'
+alias newenv="python3 -m venv ./venv"
 alias psource="source ./venv/bin/activate"
 alias deact="deactivate"
 

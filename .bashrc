@@ -118,9 +118,9 @@ if ! shopt -oq posix; then
     fi
 fi
 
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
-fi
+# if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+#     source /etc/profile.d/vte.sh
+# fi
 
 export EDITOR="code -w"
 export MYVIMRC=~/.vimrc
@@ -128,18 +128,19 @@ export MYVIMRC=~/.vimrc
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/papadavis47/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/papadavis47/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/papadavis47/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/papadavis47/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+# __conda_setup="$('/home/papadavis47/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/papadavis47/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/papadavis47/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/papadavis47/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
 # <<< conda initialize <<<
+
 # source ~/.git-prompt.sh
 
 #export PS1="\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;1m\]@\[$(tput sgr0)\]\[\033[38;5;4m\]\h\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;11m\][\w]\[$(tput sgr0)\]\\$: \[$(tput sgr0)\]"
@@ -158,5 +159,7 @@ export TERM="xterm-256color"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 . "$HOME/.cargo/env"
+
 eval "$(starship init bash)"
