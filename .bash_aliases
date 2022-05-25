@@ -23,10 +23,20 @@ alias clock="tty-clock -cs -C 1 -S"
 alias hackme="sudo openvpn ~/tryhackme/papadavis47.ovpn"
 alias sqlitestudio="/opt/SQLiteStudio/sqlitestudio&"
 alias t="tree"
+alias notes="cd ~/ObsidianVaults"
+
+# For 'new-component'
+alias coolcomp="new-component --dir components $1"
+
+# For NextJS/Tailwind Starter
+alias twnext="yarn create next-app -e https://github.com/papadavis47/my-tailwind-nextjs-starter $1"
 
 # For backup
 alias bkupcode="cp -i ~/.config/Code/User/keybindings.json ~/.config/Code/User/settings.json ~/pd47dotfiles/vscode/"
 alias bkupprofile="cp -i ~/.bash_profile ~/pd47dotfiles/"
+
+# yarn
+alias yd="yarn dev"
 
 # Git aliases
 alias gst="git status"
