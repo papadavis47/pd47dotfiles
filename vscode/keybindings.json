@@ -105,16 +105,8 @@
     "when": "!notebookEditorFocused && editorLangId == 'markdown'"
   },
   {
-    "key": "ctrl+k ctrl+k",
+    "key": "ctrl+k ctrl+z",
     "command": "workbench.action.toggleZenMode"
-  },
-  {
-    "key": "ctrl+up",
-    "command": "workbench.action.increaseViewSize"
-  },
-  {
-    "key": "ctrl+down",
-    "command": "workbench.action.decreaseViewSize"
   },
 
   /**
@@ -241,6 +233,34 @@
     "key": "alt+k",
     "command": "editor.action.moveLinesUpAction",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+c",
+    "command": "workbench.files.action.collapseExplorerFolders"
+  },
+  // Toggle
+
+  /**
+   * Toggle Font Size
+   **/
+  {
+    "key": "ctrl-k ctrl-k",
+    "command": "toggle",
+    "when": "editorTextFocus",
+    "args": {
+      "id": "fontSize",
+      "value": [
+        // below is my default
+        {
+          "editor.fontSize": 16,
+          "editor.lineHeight": 26
+        },
+        // this is my 2nd choice here
+        {
+          "editor.fontSize": 17,
+          "editor.lineHeight": 30
+        }
+      ]
+    }
   }
-  //
 ]

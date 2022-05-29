@@ -1,14 +1,12 @@
 {
   "python.terminal.executeInFileDir": true,
-  "editor.fontFamily": "Fira Code",
+  "editor.fontFamily": "FiraCode Nerd Font",
   "editor.fontLigatures": true,
   "vim.useSystemClipboard": true,
   "zenMode.fullScreen": true,
   "git.confirmSync": false,
-  "editor.fontSize": 16,
   "workbench.startupEditor": "newUntitledFile",
   "editor.letterSpacing": 1,
-  "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "[pug]": {
     "editor.tabSize": 2
@@ -21,6 +19,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
+  "css.lint.unknownAtRules": "ignore",
   "liveServer.settings.donotShowInfoMsg": true,
   "liveServer.settings.donotVerifyTags": true,
   "[javascript]": {
@@ -32,7 +31,7 @@
   "window.restoreWindows": "none",
   "explorer.confirmDragAndDrop": false,
   "extensions.ignoreRecommendations": true,
-  "vsicons.dontShowNewVersionMessage": false,
+  "vsicons.dontShowNewVersionMessage": true,
   "editor.renderWhitespace": "all",
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -67,8 +66,6 @@
       "after": ["<Escape>"]
     }
   ],
-  "editor.lineNumbers": "relative",
-  "editor.minimap.enabled": false,
   "editor.minimap.renderCharacters": false,
   "python.languageServer": "Pylance",
   "editor.linkedEditing": true,
@@ -108,7 +105,6 @@
     "editor.defaultFormatter": "ms-python.python"
   },
   "prettier.printWidth": 100,
-  "editor.multiCursorModifier": "alt",
   "[markdown]": {
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 100,
@@ -131,7 +127,7 @@
   "liveshare.authenticationProvider": "GitHub",
   "prettier.jsxSingleQuote": true,
   "prettier.quoteProps": "preserve",
-  "workbench.colorTheme": "Dracula Pro",
+  "workbench.colorTheme": "Palenight Theme",
   "eslint.options": {},
   "terminal.integrated.tabs.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -146,7 +142,7 @@
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
   "javascript.preferences.importModuleSpecifierEnding": "js",
-  "powermode.enabled": true,
+  "powermode.enabled": false,
   "powermode.enableShake": false,
   "powermode.enableStatusBarComboCounter": false,
   "powermode.presets": "fireworks",
@@ -163,20 +159,24 @@
   "editor.guides.bracketPairs": "active",
   "bracket-pair-colorizer-2.depreciation-notice": false,
   "python.defaultInterpreterPath": "/usr/bin/python3",
-  "workbench.iconTheme": "city-lights-icons-vsc-light",
+  "workbench.iconTheme": "vscode-icons",
   // "workbench.productIconTheme": "ic-drkryz-thm",
 
-  // Hide Everything
+  // Hide Everything - Testing Things here
   "workbench.sideBar.location": "right",
-  "window.menuBarVisibility": "toggle",
-  "workbench.activityBar.visible": false,
+  "editor.lineNumbers": "off",
+  "editor.minimap.enabled": false,
+  "workbench.editor.showTabs": false,
+  "workbench.statusBar.visible": true,
 
-  // End Hide Everything
   // Better Defaults from Caleb Forzio:
   "window.newWindowDimensions": "inherit",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
+  "editor.multiCursorModifier": "ctrlCmd",
   "files.trimFinalNewlines": true,
+  "editor.snippetSuggestions": "top",
+
   //  Silence the noise - by Caleb Forzio
   "editor.lightbulb.enabled": false,
   "breadcrumbs.enabled": false,
@@ -186,7 +186,15 @@
   "problems.decorations.enabled": false,
   "editor.renderControlCharacters": false,
   "editor.hideCursorInOverviewRuler": true,
-  "editor.lineHeight": 24,
+
+  // Typography
+  "editor.lineHeight": 26,
+  "editor.fontSize": 16,
+  "editor.suggestFontSize": 15,
+  "editor.suggestLineHeight": 28,
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.lineHeight": 1,
+
   "terminal.integrated.profiles.linux": {
     "bash": {
       "path": "/bin/bash",
@@ -206,5 +214,14 @@
       "path": "pwsh",
       "icon": "terminal-powershell"
     }
-  }
+  },
+  // Some new liveserver config for html files that need it
+  "liveServer.settings.fullReload": true,
+  "liveServer.settings.root": "/src",
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "window.menuBarVisibility": "toggle",
+  "workbench.activityBar.visible": false,
+  "workbench.editor.enablePreview": false
 }
