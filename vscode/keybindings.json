@@ -151,7 +151,7 @@
    **/
 
   {
-    "key": "alt+t",
+    "key": "Ctrl+t",
     "command": "workbench.action.terminal.toggleTerminal"
   },
   {
@@ -234,11 +234,6 @@
     "command": "editor.action.moveLinesUpAction",
     "when": "editorTextFocus && !editorReadonly"
   },
-  {
-    "key": "shift+alt+c",
-    "command": "workbench.files.action.collapseExplorerFolders"
-  },
-  // Toggle
 
   /**
    * Toggle Font Size
@@ -262,5 +257,38 @@
         }
       ]
     }
+  },
+
+  // Experimental from Caleb Porzio
+
+  /**
+   * Multi-Cursor
+   **/
+  {
+    "key": "ctrl+backspace",
+    "command": "editor.action.moveSelectionToPreviousFindMatch",
+    "when": "editorFocus && editorHasMultipleSelections"
+  },
+  {
+    "key": "ctrl+k ctrl+d",
+    "command": "editor.action.moveSelectionToNextFindMatch",
+    "when": "editorFocus && editorHasMultipleSelections"
+  },
+  {
+    "key": "ctrl+right",
+    "command": "editor.action.insertCursorAtEndOfEachLineSelected",
+    "when": "editorFocus && editorHasSelection"
+  },
+
+  // The following were made from the Keyboard shortcut GUI
+  {
+    "key": "ctrl+k ctrl+shift+l",
+    "command": "extension.liveServer.goOnline",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+shift+c",
+    "command": "extension.liveServer.goOffline",
+    "when": "editorTextFocus"
   }
 ]

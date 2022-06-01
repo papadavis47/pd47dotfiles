@@ -1,6 +1,6 @@
 {
   "python.terminal.executeInFileDir": true,
-  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontFamily": "MonoLisa",
   "editor.fontLigatures": true,
   "vim.useSystemClipboard": true,
   "zenMode.fullScreen": true,
@@ -49,7 +49,10 @@
     "shift+ctrl+]": false,
     "<C-m>": false,
     "<C-x>": false,
-    "<C-b>": false
+    "<C-b>": false,
+    "<C-t>": false,
+    "ctrl+right": false,
+    "ctrl+left": false
   },
   "vim.cursorStylePerMode.insert": "line",
   "vim.cursorStylePerMode.normal": "block",
@@ -127,7 +130,7 @@
   "liveshare.authenticationProvider": "GitHub",
   "prettier.jsxSingleQuote": true,
   "prettier.quoteProps": "preserve",
-  "workbench.colorTheme": "Palenight Theme",
+  "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
   "eslint.options": {},
   "terminal.integrated.tabs.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -159,7 +162,7 @@
   "editor.guides.bracketPairs": "active",
   "bracket-pair-colorizer-2.depreciation-notice": false,
   "python.defaultInterpreterPath": "/usr/bin/python3",
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Monochrome Icons",
   // "workbench.productIconTheme": "ic-drkryz-thm",
 
   // Hide Everything - Testing Things here
@@ -195,6 +198,8 @@
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.lineHeight": 1,
 
+  // Terminal settings
+
   "terminal.integrated.profiles.linux": {
     "bash": {
       "path": "/bin/bash",
@@ -215,7 +220,9 @@
       "icon": "terminal-powershell"
     }
   },
+
   // Some new liveserver config for html files that need it
+
   "liveServer.settings.fullReload": true,
   "liveServer.settings.root": "/src",
   "[dotenv]": {
@@ -223,5 +230,17 @@
   },
   "window.menuBarVisibility": "toggle",
   "workbench.activityBar.visible": false,
-  "workbench.editor.enablePreview": false
+  "workbench.editor.enablePreview": false,
+  // Find exclusions:
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/package-lock.json": true,
+    "**/yarn.lock": true
+  },
+  "monokaiPro.fileIconsMonochrome": true,
+  "terminal.integrated.confirmOnKill": "never",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.enablePersistentSessions": false
 }
