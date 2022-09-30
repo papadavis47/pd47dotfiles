@@ -43,6 +43,7 @@ alias gst="git status"
 alias ga="git add ."
 alias gl="git log"
 alias gcm="git commit -m $1"
+alias gitp="git push"
 
 # The following are Django shortcuts
 alias dserv="python manage.py runserver"
