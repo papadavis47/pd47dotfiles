@@ -18,10 +18,6 @@
     "command": "workbench.action.focusActiveEditorGroup"
   },
   {
-    "key": "ctrl+k ctrl+x",
-    "command": "workbench.extensions.action.showInstalledExtensions"
-  },
-  {
     "key": "ctrl+b",
     "command": "workbench.action.toggleSidebarVisibility"
   },
@@ -113,11 +109,6 @@
    * Split Panels
    **/
 
-  {
-    "key": "alt+w",
-    "command": "workbench.action.joinAllGroups",
-    "when": "editorFocus"
-  },
   {
     "key": "alt+n",
     "command": "workbench.action.splitEditor",
@@ -280,6 +271,18 @@
     "when": "editorFocus && editorHasSelection"
   },
 
+  /**
+   * Project Switching
+
+   This is very cool - started using this late in the Porzio process
+
+   **/
+  {
+    "key": "ctrl+;",
+    "command": "workbench.action.switchWindow",
+    "when": "! config.simple-project-switcher.present"
+  },
+
   // The following were made from the Keyboard shortcut GUI
   {
     "key": "ctrl+k ctrl+shift+l",
@@ -290,5 +293,13 @@
     "key": "ctrl+k ctrl+shift+c",
     "command": "extension.liveServer.goOffline",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+m",
+    "command": "quokka.toggle"
+  },
+  {
+    "key": "ctrl+k a",
+    "command": "workbench.action.toggleActivityBarVisibility"
   }
 ]

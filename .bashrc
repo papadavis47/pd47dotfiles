@@ -153,7 +153,6 @@ export MYVIMRC=~/.vimrc
 
 #source `which activate.sh`
 export TERM="xterm-256color"
-
 # The following is for NVM - Node Version Manager
 
 export NVM_DIR="$HOME/.nvm"

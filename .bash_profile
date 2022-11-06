@@ -5,9 +5,9 @@ export DENO_INSTALL="/home/papadavis47/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="/opt:$PATH"
 export PATH="$HOME/my_bash_scripts:$PATH"
+export PATH="$HOME/scripting:$PATH"
 export PATH="$HOME/pythonscripts:$PATH"
 export PATH="$HOME/GitHub_Projects/py_tools:$PATH"
-export PATH="/snap/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

@@ -1,4 +1,4 @@
-" Maintained and nurtured with 😍 for my .vimrc
+ " Maintained and nurtured with 😍 for my .vimrc
 
 " -----------------------------------------------------------------"
 "                   The VUNDLE STUFF 
@@ -34,8 +34,6 @@ Plugin 'tommcdo/vim-exchange'
 Plugin 'vim-scripts/ReplaceWithRegister'
 Plugin 'haishanh/night-owl.vim'
 Plugin 'chriskempson/base16-vim'
-Plugin 'nightsense/snow'
-Plugin 'nightsense/stellarized'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
 Plugin 'kristijanhusak/vim-carbon-now-sh'
@@ -351,12 +349,12 @@ vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
 "Experiment to get the above lines to work 
-let c='a'
-while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
+" let c='a'
+" while c <= 'z'
+"   exec "set <A-".c.">=\e".c
+"   exec "imap \e".c." <A-".c.">"
+"   let c = nr2char(1+char2nr(c))
+" endw
 
 set timeout ttimeoutlen=50
 
@@ -372,9 +370,10 @@ let g:falcon_background = 0
 " colorscheme falcon
 " colorscheme summerfruit256
 " colorscheme simpleandfriendly
-colorscheme dracula_pro_van_helsing
+" colorscheme dracula_pro_van_helsing
 " colorscheme github
 " colorscheme pink-moon
+colorscheme OceanicNext
 
 "Comment and uncomment as needed
 " --------------------------------------------------"
@@ -385,14 +384,17 @@ highlight Comment cterm=italic
 " ---------- End Dracula Pro Stuff -------------"
 
 
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup		" keep a backup file (restore to previous version)
-  if has('persistent_undo')
-    set undofile	" keep an undo file (undo changes after closing)
-  endif
-endif
+" I am commenting the below lines due to error with nvim"
+" October 3, 2022"
+
+" if has("vms")
+"   set nobackup		" do not keep a backup file, use versions instead
+" else
+"   set backup		" keep a backup file (restore to previous version)
+"   if has('persistent_undo')
+"     set undofile	" keep an undo file (undo changes after closing)
+"   endif
+" endif
 
 if &t_Co > 2 || has("gui_running")
   " Switch on highlighting the last used search pattern.
@@ -428,6 +430,8 @@ let g:netrw_preview=1     "open preview window to the right
 " Learned this about working with React
 " It will help eventually
 set backupcopy=yes
+
+"This is a change using neovim. I am testing it here."
 
 "This might be a better solution than the 3 lines above:
 "I learned this from a stackoverflow answer about not cluttering directories
@@ -474,7 +478,7 @@ vmap <leader>gt <Plug>Titlecase
 nmap <leader>gT <Plug>TitlecaseLine
 
 "-------------------- Abbreviations -----------------------
-iabbrev ccopy Copyright 2021 John William Davis, all rights reserved. 
+iabbrev ccopy Copyright 2022 John William Davis, all rights reserved. 
 iabbrev _me jwdavisdeveloper@gmail.com
 
 " This is for the custom copy plugin from Chris Toomey
