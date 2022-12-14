@@ -16,3 +16,8 @@ sorts of people - but at the end of the day, in any discipline, I have to find w
 make my own methods.
 
 There are a "thousand different roads to Mecca". 🥋 🦁
+
+# Read More
+
+I wrote more about how my `.vimrc` file evolved in
+[this post](https://dev.to/papadavis47/a-walking-stick-and-a-vimrc-27jl) on **dev.to**.

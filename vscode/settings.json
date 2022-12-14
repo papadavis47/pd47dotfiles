@@ -40,7 +40,7 @@
     "<C-d>": false,
     "<C-w>": false,
     "<C-k>": false,
-    "<C-e>": false,
+    // "<C-e>": false,
     "<C-n>": false,
     "<C-f>": false,
     "<C-l>": false,
@@ -60,14 +60,9 @@
   "vim.cursorStylePerMode.visualblock": "line",
   "vim.cursorStylePerMode.visualline": "block",
   "vim.highlightedyank.enable": true,
-  "vim.scroll": 15,
+  "vim.scroll": 10,
   "vim.vimrc.path": "~/.vimrc",
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "j"],
-      "after": ["<Escape>"]
-    }
-  ],
+  "vim.insertModeKeyBindings": [],
   "editor.minimap.renderCharacters": false,
   "python.languageServer": "Pylance",
   "editor.linkedEditing": true,
@@ -78,9 +73,8 @@
   "python.linting.pylintUseMinimalCheckers": false,
   "java.semanticHighlighting.enabled": true,
   "python.pythonPath": "/usr/bin/python3",
-  // "terminal.integrated.shell.linux": "/bin/bash",
   "terminal.integrated.cursorBlinking": true,
-  "editor.formatOnPaste": true,
+  //   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
@@ -125,7 +119,6 @@
   "prettier.jsxSingleQuote": true,
   "prettier.quoteProps": "preserve",
   "eslint.options": {},
-  "terminal.integrated.tabs.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
   "editor.formatOnType": true,
@@ -136,10 +129,7 @@
   "html.format.templating": true,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
-  "javascript.preferences.importModuleSpecifierEnding": "js",
-  "powermode.enabled": false,
-  "powermode.presets": "fireworks",
-  "terminal.integrated.defaultLocation": "editor",
+  "javascript.preferences.importModuleSpecifierEnding": "index",
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust"
   },
@@ -169,9 +159,6 @@
   "files.trimFinalNewlines": true,
   "editor.snippetSuggestions": "top",
   "workbench.editor.enablePreview": false,
-  // Added on my 2nd trip through Forzio course
-  "editor.detectIndentation": false,
-  "workbench.activityBar.visible": false,
   "editor.lineNumbers": "relative",
 
   //  Silence the noise - by Caleb Forzio
@@ -223,7 +210,8 @@
   // Some new liveserver config for html files that need it
 
   "liveServer.settings.fullReload": true,
-  "liveServer.settings.root": "/src",
+  //   "liveServer.settings.root": "/src",
+  "liveServer.settings.root": "/",
   "[dotenv]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
@@ -248,9 +236,34 @@
     "editor.wordWrapColumn": 75,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "powermode.combo.location": "statusbar",
-  "powermode.combo.counterEnabled": "hide",
-  "powermode.combo.timerEnabled": "default",
-  "powermode.shake.enabled": false,
-  "workbench.colorTheme": "Palenight Italic"
+  "workbench.colorTheme": "Monokai Pro",
+  "eslint.packageManager": "yarn",
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "markdown",
+    "bash"
+  ],
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.activityBar.visible": false,
+  "prettier.singleQuote": true,
+  "typescript.preferences.quoteStyle": "single",
+  "terminal.integrated.tabs.hideCondition": "singleGroup",
+  "terminal.integrated.tabs.showActions": "never",
+  "terminal.integrated.tabs.focusMode": "singleClick",
+  "terminal.integrated.tabs.enableAnimation": false,
+  "terminal.integrated.shellIntegration.history": 50,
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.tabs.enabled": false,
+  "markdownlint.config": {
+    "MD033": false,
+    "no-inline-html": {
+      "allowed_elements": ["h1", "p", "img"]
+    },
+    "MD013": { "line_length": 100 }
+  }
 }

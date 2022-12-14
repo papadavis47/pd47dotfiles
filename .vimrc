@@ -56,6 +56,9 @@ Plugin 'elzr/vim-json'
 Plugin 'wincent/terminus'
 Plugin 'sts10/vim-pink-moon'
 Plugin 'preservim/nerdtree'
+Plugin 'connorholyday/vim-snazzy'
+Plugin 'srcery-colors/srcery-vim'
+Plugin 'glepnir/oceanic-material'
 Plugin 'prettier/vim-prettier'
 Plugin 'rust-lang/rust.vim'
 " Set the following as last Plugin Listed 
@@ -373,7 +376,10 @@ let g:falcon_background = 0
 " colorscheme dracula_pro_van_helsing
 " colorscheme github
 " colorscheme pink-moon
-colorscheme OceanicNext
+" colorscheme OceanicNext
+" colorscheme srcery
+" colorscheme oceanic_next
+colorscheme snazzy
 
 "Comment and uncomment as needed
 " --------------------------------------------------"

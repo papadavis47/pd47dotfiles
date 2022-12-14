@@ -10,7 +10,7 @@
   // Panels
 
   {
-    "key": "ctrl+e",
+    "key": "ctrl+k ctrl+e",
     "command": "workbench.view.explorer"
   },
   {
@@ -68,9 +68,14 @@
     "when": "editorFocus"
   },
   {
-    "key": "shift+ctrl+]",
+    "key": "shiftctrl+]",
     "command": "editor.unfold",
     "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "editor.action.joinLines",
+    "when": "editorTextFocus"
   },
 
   //
@@ -159,6 +164,14 @@
     "key": "alt+h",
     "command": "workbench.action.terminal.focusPreviousPane",
     "when": "terminalFocus"
+  },
+
+  // The following item is not exactly what I want - but I am working on it
+
+  {
+    "key": "ctrl+alt+'",
+    "command": "workbench.action.quickOpenTerm",
+    "when": "editorTextFocus"
   },
 
   /**
