@@ -60,6 +60,10 @@ Plugin 'connorholyday/vim-snazzy'
 Plugin 'srcery-colors/srcery-vim'
 Plugin 'glepnir/oceanic-material'
 Plugin 'prettier/vim-prettier'
+Plugin 'kyoz/purify', { 'rtp': 'vim' }
+Plugin 'Everblush/everblush.vim'
+Plugin 'drewtempelmeyer/palenight.vim'
+Plugin 'bling/vim-bufferline'
 Plugin 'rust-lang/rust.vim'
 " Set the following as last Plugin Listed 
 Plugin 'ryanoasis/vim-devicons'
@@ -367,6 +371,8 @@ packadd! dracula_pro
 let g:dracula_colorterm = 0
 let g:dracula_italic = 0
 let g:falcon_background = 0
+" Italics for my favorite color scheme
+let g:palenight_terminal_italics=1
 
 " -----------Favorite Colorschemes-----------------"
 " colorscheme dracula_pro
@@ -378,8 +384,10 @@ let g:falcon_background = 0
 " colorscheme pink-moon
 " colorscheme OceanicNext
 " colorscheme srcery
-" colorscheme oceanic_next
-colorscheme snazzy
+" colorscheme purify
+" colorscheme snazzy
+" colorscheme everblush
+colorscheme palenight
 
 "Comment and uncomment as needed
 " --------------------------------------------------"
@@ -451,7 +459,8 @@ set undodir=~/.vim/undo//
 
 let g:airline#extensions#tabline#enabled = 1
 " let g:airline_theme='papercolor'
-let g:airline_theme='minimalist'
+" let g:airline_theme='minimalist'
+let g:airline_theme = "palenight"
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -484,7 +493,7 @@ vmap <leader>gt <Plug>Titlecase
 nmap <leader>gT <Plug>TitlecaseLine
 
 "-------------------- Abbreviations -----------------------
-iabbrev ccopy Copyright 2022 John William Davis, all rights reserved. 
+iabbrev ccopy Copyright 2023 John William Davis, all rights reserved. 
 iabbrev _me jwdavisdeveloper@gmail.com
 
 " This is for the custom copy plugin from Chris Toomey
