@@ -23,12 +23,11 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dracula/vim', { 'name': 'dracula' }
-Plugin 'instant-markdown/vim-instant-markdown', {'rtp': 'after'}
+Plugin 'instant-markdown/vim-instant-markdown'
 Plugin 'szw/vim-maximizer'
 Plugin 'tpope/vim-markdown'
 Plugin 'jtratner/vim-flavored-markdown'
 Plugin 'junegunn/vader.vim'
-Plugin 'mrtazz/simplenote.vim'
 Plugin 'christoomey/vim-system-copy'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'vim-scripts/ReplaceWithRegister'
@@ -65,6 +64,8 @@ Plugin 'Everblush/everblush.vim'
 Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'bling/vim-bufferline'
 Plugin 'rust-lang/rust.vim'
+Plugin 'mattn/emmet-vim'                     " emmet
+Plugin 'matze/vim-move'
 " Set the following as last Plugin Listed 
 Plugin 'ryanoasis/vim-devicons'
 " All of your Plugins must be added before the following line
@@ -345,23 +346,9 @@ nnoremap <F4> :NumbersOnOff<CR>
 nmap <F12> }
 nmap <F10> {
 
-" Testing out some new mapping involving moving text
-" May 2022
-" This is not working now - but I will figure it out
-nnoremap <A-k> :m .-2<CR>==
-nnoremap <A-j> :m .+1<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
-
-"Experiment to get the above lines to work 
-" let c='a'
-" while c <= 'z'
-"   exec "set <A-".c.">=\e".c
-"   exec "imap \e".c." <A-".c.">"
-"   let c = nr2char(1+char2nr(c))
-" endw
+"The following is for the Move Plugin"
+let g:move_key_modifier = 'C'
+let g:move_key_modifier_visualmode = 'S'
 
 set timeout ttimeoutlen=50
 

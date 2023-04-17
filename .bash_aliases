@@ -9,7 +9,6 @@ alias ...='cd ../../'
 alias downloads='cd ~/Downloads'
 alias hello='echo "Hello World!"'
 alias upgrade='sudo apt update && sudo apt upgrade'
-alias jup='jupyter notebook'
 alias iceweasel='firefox&'
 alias psql="sudo -u postgres psql"
 alias pgserver="sudo -u postgres service postgresql start"
@@ -18,6 +17,7 @@ alias codei="code-insiders $1"
 alias vimrc="vim ~/.vimrc"
 alias bashrc="vim ~/.bashrc"
 alias newalias="vim ~/.bash_aliases"
+alias saremove="sudo apt autoremove"
 alias bsource="source ~/.bashrc"
 alias clock="tty-clock -cs -C 1 -S"
 alias hackme="sudo openvpn ~/tryhackme/papadavis47.ovpn"
@@ -25,6 +25,7 @@ alias sqlitestudio="/opt/SQLiteStudio/sqlitestudio&"
 alias t="tree"
 alias notes="cd ~/ObsidianVaults"
 
+# The following shortcut was made before I learned how to configure new-component properly
 # For 'new-component'
 alias coolcomp="new-component --dir components $1"
 
@@ -77,3 +78,6 @@ alias gd="gatsby develop"
 
 # Rust version of cat
 alias bat="batcat"
+
+# Node & React
+alias cra="npm run start"
