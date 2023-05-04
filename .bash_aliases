@@ -25,6 +25,7 @@ alias sqlitestudio="/opt/SQLiteStudio/sqlitestudio&"
 alias t="tree"
 alias notes="cd ~/ObsidianVaults"
 
+
 # The following shortcut was made before I learned how to configure new-component properly
 # For 'new-component'
 alias coolcomp="new-component --dir components $1"

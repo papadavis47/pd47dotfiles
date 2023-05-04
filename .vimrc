@@ -35,7 +35,6 @@ Plugin 'haishanh/night-owl.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
-Plugin 'kristijanhusak/vim-carbon-now-sh'
 Plugin 'junegunn/vim-peekaboo'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'tpope/vim-scriptease'
@@ -335,8 +334,6 @@ inoremap [ []<Esc>i
 " to jump out of brackets
 inoremap <C-e> <C-o>A
 
-" For CarbonNow - make carbon snippets
-vnoremap <F5> :CarbonNowSh<CR>
 
 " The following is for numbers.vim
 nnoremap <F3> :NumbersToggle<CR>
