@@ -290,11 +290,15 @@
    This is very cool - started using this late in the Porzio process
 
    **/
+
+  //  The following is for project switching between open instances of VS Code
   {
     "key": "ctrl+;",
     "command": "workbench.action.switchWindow",
     "when": "! config.simple-project-switcher.present"
   },
+
+  // I just checked it on January 28, 2023 - and it is still working
 
   // The following were made from the Keyboard shortcut GUI
   {
@@ -314,5 +318,13 @@
   {
     "key": "ctrl+k a",
     "command": "workbench.action.toggleActivityBarVisibility"
+  },
+  {
+    "key": "ctrl+k f10",
+    "command": "workbench.action.moveSideBarLeft"
+  },
+  {
+    "key": "ctrl+k f11",
+    "command": "workbench.action.moveSideBarRight"
   }
 ]

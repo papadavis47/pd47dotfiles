@@ -24,6 +24,7 @@ alias hackme="sudo openvpn ~/tryhackme/papadavis47.ovpn"
 alias sqlitestudio="/opt/SQLiteStudio/sqlitestudio&"
 alias t="tree"
 alias notes="cd ~/ObsidianVaults"
+alias vs="code ."
 
 
 # The following shortcut was made before I learned how to configure new-component properly

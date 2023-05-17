@@ -142,10 +142,6 @@
   "editor.guides.bracketPairs": "active",
   "python.defaultInterpreterPath": "/usr/bin/python3",
   "workbench.iconTheme": "vscode-icons",
-  // "workbench.productIconTheme": "ic-drkryz-thm",
-
-  // Hide Everything - Testing Things here
-  "workbench.sideBar.location": "right",
   "editor.minimap.enabled": false,
   "workbench.editor.showTabs": false,
   "workbench.statusBar.visible": true,
@@ -155,7 +151,6 @@
   "window.newWindowDimensions": "inherit",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
-  "editor.multiCursorModifier": "ctrlCmd",
   "files.trimFinalNewlines": true,
   "editor.snippetSuggestions": "top",
   "workbench.editor.enablePreview": false,
@@ -233,10 +228,10 @@
   // The following was set when I began working with MDX
   "[mdx]": {
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 75,
+    "editor.wordWrapColumn": 100,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Monokai Pro",
+  "workbench.colorTheme": "poimandres",
   "eslint.packageManager": "yarn",
   "eslint.probe": [
     "javascript",
@@ -249,7 +244,6 @@
     "bash"
   ],
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.activityBar.visible": false,
   "prettier.singleQuote": true,
   "typescript.preferences.quoteStyle": "single",
   "terminal.integrated.tabs.hideCondition": "singleGroup",
@@ -265,5 +259,36 @@
       "allowed_elements": ["h1", "p", "img"]
     },
     "MD013": { "line_length": 100 }
-  }
+  },
+  "totalTypeScript.hiddenTips": [
+    "type-alias-declaration",
+    "type-alias-with-generics",
+    "literal-type",
+    "typing-function-parameters",
+    "ts-object-type",
+    "basic-types",
+    "variable-type-annotation",
+    "interface-declaration",
+    "optional-object-property",
+    "union-type",
+    "null-keyword",
+    "array-type",
+    "mapped-type",
+    "never-keyword",
+    "passing-generics-to-types",
+    "non-null-expression",
+    "as-assertion",
+    "undefined-keyword",
+    "any-type",
+    "typeof"
+  ],
+  "totalTypeScript.hideAllTips": false,
+  "totalTypeScript.hideBasicTips": false,
+  "workbench.layoutControl.enabled": false,
+  "window.doubleClickIconToClose": true,
+  "editor.wordWrap": "bounded",
+  "editor.formatOnPaste": true,
+  "workbench.sideBar.location": "right",
+  "editor.inlineSuggest.enabled": true,
+  "workbench.activityBar.visible": false
 }
