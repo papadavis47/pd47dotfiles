@@ -63,6 +63,7 @@ Plugin 'Everblush/everblush.vim'
 Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'bling/vim-bufferline'
 Plugin 'rust-lang/rust.vim'
+Plugin 'wadackel/vim-dogrun'
 Plugin 'mattn/emmet-vim'                     " emmet
 Plugin 'matze/vim-move'
 " Set the following as last Plugin Listed 
@@ -371,7 +372,8 @@ let g:palenight_terminal_italics=1
 " colorscheme purify
 " colorscheme snazzy
 " colorscheme everblush
-colorscheme palenight
+" colorscheme palenight
+colorscheme dogrun
 
 "Comment and uncomment as needed
 " --------------------------------------------------"

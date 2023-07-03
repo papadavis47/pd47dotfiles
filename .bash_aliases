@@ -26,6 +26,9 @@ alias t="tree"
 alias notes="cd ~/ObsidianVaults"
 alias vs="code ."
 
+# Navigation
+alias journal="cd ~/newJournal2023"
+
 
 # The following shortcut was made before I learned how to configure new-component properly
 # For 'new-component'
