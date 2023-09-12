@@ -173,3 +173,9 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+export MODULAR_HOME="/home/papa/.modular"
+export PATH="/home/papa/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
