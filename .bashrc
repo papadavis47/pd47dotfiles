@@ -166,6 +166,7 @@ eval "$(starship init bash)"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 
+
 # pnpm
 export PNPM_HOME="/home/papadavis47/.local/share/pnpm"
 case ":$PATH:" in
@@ -173,3 +174,8 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+export MODULAR_HOME="/home/papadavis47/.modular"
+export PATH="/home/papadavis47/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
