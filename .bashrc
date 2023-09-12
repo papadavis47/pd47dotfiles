@@ -4,8 +4,8 @@
 
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
-    *) return;;
+*i*) ;;
+*) return ;;
 esac
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -39,7 +39,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
+xterm-color | *-256color) color_prompt=yes ;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -58,7 +58,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[00m\]\$ '
 else
@@ -68,11 +67,10 @@ fi
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
-    xterm*|rxvt*)
-        PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+xterm* | rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
-    *)
-    ;;
+*) ;;
 esac
 
 # enable color support of ls and also add handy aliases
@@ -81,7 +79,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
-    
+
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
@@ -113,7 +111,7 @@ fi
 if ! shopt -oq posix; then
     if [ -f /usr/share/bash-completion/bash_completion ]; then
         . /usr/share/bash-completion/bash_completion
-        elif [ -f /etc/bash_completion ]; then
+    elif [ -f /etc/bash_completion ]; then
         . /etc/bash_completion
     fi
 fi
@@ -124,7 +122,6 @@ fi
 
 export EDITOR="code -w"
 export MYVIMRC=~/.vimrc
-
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -150,14 +147,13 @@ export MYVIMRC=~/.vimrc
 # The following is something I put in after the RealPython Flask tutorial
 # I can change it as needed
 
-
 #source `which activate.sh`
 export TERM="xterm-256color"
 # The following is for NVM - Node Version Manager
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 . "$HOME/.cargo/env"
 
@@ -165,17 +161,16 @@ eval "$(starship init bash)"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-
-
 # pnpm
 export PNPM_HOME="/home/papadavis47/.local/share/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
-export MODULAR_HOME="/home/papadavis47/.modular"
-export PATH="/home/papadavis47/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
+export MODULAR_HOME="/home/papa/.modular"
+export PATH="/home/papa/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
