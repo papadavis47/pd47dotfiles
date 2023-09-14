@@ -8,12 +8,10 @@ export PATH="$HOME/my_bash_scripts:$PATH"
 export PATH="$HOME/scripting:$PATH"
 export PATH="$HOME/pythonscripts:$PATH"
 export PATH="$HOME/GitHub_Projects/py_tools:$PATH"
+export PATH="$HOME/currentLearning/bash/scripts:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-
-
-
 
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
@@ -24,3 +22,6 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 . "$HOME/.cargo/env"
+
+export MODULAR_HOME="/home/papadavis47/.modular"
+export PATH="/home/papadavis47/.modular/pkg/packages.modular.com_mojo/bin:$PATH"

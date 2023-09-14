@@ -8,9 +8,6 @@
   "workbench.startupEditor": "newUntitledFile",
   "editor.letterSpacing": 1,
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  "[pug]": {
-    "editor.tabSize": 2
-  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -22,10 +19,20 @@
   "css.lint.unknownAtRules": "ignore",
   "liveServer.settings.donotShowInfoMsg": true,
   "liveServer.settings.donotVerifyTags": true,
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
   "[javascript]": {
     "editor.tabSize": 2,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  // Experiment here with the following:
+  "workbench.tree.indent": 15,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.colorCustomizations": {
+    "tree.indentGuidesStroke": "#05ef3c"
+  },
+  // End experiment
   "python.formatting.provider": "black",
   "workbench.editor.restoreViewState": false,
   "window.restoreWindows": "none",
@@ -141,7 +148,7 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
   "python.defaultInterpreterPath": "/usr/bin/python3",
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.iconTheme": "bearded-icons",
   "editor.minimap.enabled": false,
   "workbench.editor.showTabs": false,
   "workbench.statusBar.visible": true,
@@ -231,7 +238,7 @@
     "editor.wordWrapColumn": 100,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "poimandres",
+  "workbench.colorTheme": "Kanagawa",
   "eslint.packageManager": "yarn",
   "eslint.probe": [
     "javascript",
@@ -290,5 +297,8 @@
   "editor.formatOnPaste": true,
   "workbench.sideBar.location": "right",
   "editor.inlineSuggest.enabled": true,
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
   "workbench.activityBar.visible": false
 }
