@@ -12,6 +12,11 @@ I have left several `:help X` comments throughout the init.lua
 You should run that command and read that help section for more information.
 
 --]]
+--
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 
 vim.g.mapleader = ','
 vim.g.maplocalleader = ','
@@ -72,6 +77,7 @@ require('lazy').setup({
     },
   },
 
+
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -110,6 +116,16 @@ require('lazy').setup({
     },
   },
 
+  -- Seems like a cool colorscheme
+
+  {
+    "rebelot/kanagawa.nvim",
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'kanagawa'
+    end,
+  },
+
   -- {
   --   -- My own choice of theme
   --   'fenetikm/falcon',
@@ -118,14 +134,14 @@ require('lazy').setup({
   --     vim.cmd.colorscheme 'falcon'
   --   end,
   -- },
-  {
-  -- Another good theme
-    'folke/tokyonight.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'tokyonight'
-    end,
-  },
+  -- {
+  -- -- Another good theme
+  --   'folke/tokyonight.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'tokyonight'
+  --   end,
+  -- },
 
   {
     -- Set lualine as statusline
@@ -140,6 +156,29 @@ require('lazy').setup({
       },
     },
   },
+
+  -- this is the lua version of NerdTree - called NvimTree
+  -- require("nvim-tree").setup()
+
+{
+  "nvim-tree/nvim-tree.lua",
+  version = "*",
+  lazy = false,
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+  },
+  config = function()
+    require("nvim-tree").setup {}
+  end,
+ },
+
+{
+    'goolord/alpha-nvim',
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.startify'.config)
+    end
+},
+
 
   {
     -- Add indentation guides even on blank lines
@@ -257,8 +296,20 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- My own custom keymappings from .vimrc
 vim.keymap.set('n', '<leader>s', ':w<CR>')
 vim.keymap.set('n', '<leader>e', ':q<CR>')
+vim.keymap.set('n', '<leader>d', ':bd<CR>')
 vim.keymap.set('n', 'K', '5k')
 vim.keymap.set('n', 'J', '5j')
+
+-- Trying Ryan Florence trick with Lua
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { remap = false } )
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { remap = false } )
+vim.keymap.set('i', '<A-j>', '<Escape>:m .+1<CR>==gi', { remap = false } )
+vim.keymap.set('i', '<A-k>', '<Escape>:m .-2<CR>==gi', { remap = false } )
+vim.keymap.set('v', '<A-j>', ':m \'>+1<CR>gv=gv', { remap = false } )
+vim.keymap.set('v', '<A-k>', ':m \'<-2<CR>gv=gv', { remap = false } )
+
+-- for NvimTree
+vim.keymap.set('n', '<leader>t', ':NvimTreeToggle<CR>')
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -293,7 +344,7 @@ pcall(require('telescope').load_extension, 'fzf')
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader><leader>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -303,7 +354,7 @@ vim.keymap.set('n', '<leader>/', function()
 end, { desc = '[/] Fuzzily search in current buffer' })
 
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
-vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
@@ -313,7 +364,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'bash' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
@@ -374,6 +425,8 @@ require('nvim-treesitter.configs').setup {
     },
   },
 }
+
+-- Test here
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
@@ -436,7 +489,8 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
-  -- tsserver = {},
+  -- bashls = {},
+  tsserver = {},
 
   lua_ls = {
     Lua = {
@@ -444,7 +498,9 @@ local servers = {
       telemetry = { enable = false },
     },
   },
-}
+},
+
+
 
 -- Setup neovim lua configuration
 require('neodev').setup()
