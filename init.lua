@@ -305,7 +305,7 @@ vim.keymap.set('v', '<A-j>', ':m \'>+1<CR>gv=gv', { remap = false } )
 vim.keymap.set('v', '<A-k>', ':m \'<-2<CR>gv=gv', { remap = false } )
 
 -- for NvimTree
-vim.keymap.set('n', '<leader>t', ':NvimTreeToggle<CR>')
+vim.keymap.set('n', '<leader>o', ':NvimTreeToggle<CR>')
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
