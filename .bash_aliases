@@ -26,6 +26,7 @@ alias sqlitestudio="/opt/SQLiteStudio/sqlitestudio&"
 alias t="tree"
 alias notes="cd ~/ObsidianVaults"
 alias vs="code ."
+alias nv="nvim"
 
 # Navigation
 alias journal="cd ~/newJournal2023"
