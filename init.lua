@@ -6,11 +6,6 @@
 
   And then you can explore or search through `:help lua-guide`
 
-Kickstart Guide:
-
-I have left several `:help X` comments throughout the init.lua
-You should run that command and read that help section for more information.
-
 --]]
 --
 -- disable netrw at the very start of your init.lua
@@ -47,7 +42,6 @@ require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
 -- Colorschemes
-  -- 'fenetikm/falcon',
   'rafamadriz/neon',
   'dracula/vim',
   'folke/tokyonight.nvim',
@@ -57,6 +51,9 @@ require('lazy').setup({
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
+
+  -- This is for navigating with Tmux
+    "christoomey/vim-tmux-navigator",
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -158,7 +155,6 @@ require('lazy').setup({
   },
 
   -- this is the lua version of NerdTree - called NvimTree
-  -- require("nvim-tree").setup()
 
 {
   "nvim-tree/nvim-tree.lua",
@@ -364,7 +360,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'bash' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim', 'bash', 'css', 'astro' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
@@ -485,11 +481,8 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- bashls = {},
+  rust_analyzer = {},
+  bashls = {},
   tsserver = {},
 
   lua_ls = {
