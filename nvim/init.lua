@@ -8,6 +8,12 @@
 
 --]]
 --
+-- Testing this out
+
+-- Standar options for my keymaps
+local opts = { remap = false, silent = true }
+
+
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -51,6 +57,9 @@ require('lazy').setup({
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
+
+  -- For Maximizing window splits
+   'szw/vim-maximizer',
 
   -- This is for navigating with Tmux
     "christoomey/vim-tmux-navigator",
@@ -266,6 +275,9 @@ vim.o.smartcase = true
 -- Split Window Right
 vim.o.splitright = true
 
+-- Split Window Below
+vim.o.splitbelow = true
+
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
 
@@ -295,6 +307,14 @@ vim.keymap.set('n', '<leader>e', ':q<CR>')
 vim.keymap.set('n', '<leader>d', ':bd<CR>')
 vim.keymap.set('n', 'K', '5k')
 vim.keymap.set('n', 'J', '5j')
+vim.keymap.set('n', '<Leader>x', ':q!<CR>', opts)
+vim.keymap.set('n', '<Leader>a', ':qa<CR>', opts)
+vim.keymap.set('n', '<Leader>l', ':ls<CR>', { remap = false, silent = true, desc = "List all buffers"})
+
+
+-- for dealing with buffers
+vim.keymap.set('n', '<S-l>', ':bnext<CR>', opts)
+vim.keymap.set('n', '<S-h>', ':bprevious<CR>', opts)
 
 -- Trying Ryan Florence trick with Lua
 vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { remap = false } )
@@ -305,7 +325,11 @@ vim.keymap.set('v', '<A-j>', ':m \'>+1<CR>gv=gv', { remap = false } )
 vim.keymap.set('v', '<A-k>', ':m \'<-2<CR>gv=gv', { remap = false } )
 
 -- for NvimTree
-vim.keymap.set('n', '<leader>o', ':NvimTreeToggle<CR>')
+vim.keymap.set('n', '<leader>o', ':NvimTreeToggle<CR>', opts)
+
+-- for Maximizer
+vim.keymap.set('n', '<Leader>mt', ':MaximizerToggle<CR>', opts)
+
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
