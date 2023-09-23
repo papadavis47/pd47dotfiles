@@ -7,11 +7,7 @@
   And then you can explore or search through `:help lua-guide`
 
 --]]
---
--- Testing this out
 
--- Standar options for my keymaps
-local opts = { remap = false, silent = true }
 
 
 -- disable netrw at the very start of your init.lua
@@ -51,6 +47,9 @@ require('lazy').setup({
   'rafamadriz/neon',
   'dracula/vim',
   'folke/tokyonight.nvim',
+  'fenetikm/falcon',
+  'rebelot/kanagawa.nvim',
+
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
@@ -133,14 +132,6 @@ require('lazy').setup({
   },
 
   -- {
-  --   -- My own choice of theme
-  --   'fenetikm/falcon',
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme 'falcon'
-  --   end,
-  -- },
-  -- {
   -- -- Another good theme
   --   'folke/tokyonight.nvim',
   --   priority = 1000,
@@ -163,24 +154,57 @@ require('lazy').setup({
     },
   },
 
+  -- Surround plugin
+
+ {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+},
+
+   {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {} -- this is equalent to setup({}) function
+  },
+
+  {
+
+  "f-person/git-blame.nvim",
+    event = "VeryLazy"
+
+  },
+
   -- this is the lua version of NerdTree - called NvimTree
 
 {
   "nvim-tree/nvim-tree.lua",
   version = "*",
   lazy = false,
+  
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
   config = function()
-    require("nvim-tree").setup {}
+    require("nvim-tree").setup {
+      disable_netrw = true,
+      view = { side = 'right', width = 60},
+        actions = {
+          open_file = { quit_on_open = true }
+        }
+      }
   end,
  },
 
 {
     'goolord/alpha-nvim',
     config = function ()
-        require'alpha'.setup(require'alpha.themes.startify'.config)
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
     end
 },
 
@@ -253,9 +277,15 @@ vim.o.background = 'dark'
 
 -- Make line numbers default
 vim.wo.relativenumber = true
+vim.o.number = true
+vim.wo.numberwidth = 2
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
+
+-- From trash.nvim
+-- vim.o.showtabline = 2
+vim.o.tabstop = 2
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -292,6 +322,9 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
+-- From Trashvim
+vim.o.smartindent = true
+
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
@@ -307,14 +340,14 @@ vim.keymap.set('n', '<leader>e', ':q<CR>')
 vim.keymap.set('n', '<leader>d', ':bd<CR>')
 vim.keymap.set('n', 'K', '5k')
 vim.keymap.set('n', 'J', '5j')
-vim.keymap.set('n', '<Leader>x', ':q!<CR>', opts)
-vim.keymap.set('n', '<Leader>a', ':qa<CR>', opts)
+vim.keymap.set('n', '<Leader>x', ':q!<CR>')
+vim.keymap.set('n', '<Leader>a', ':qa<CR>')
 vim.keymap.set('n', '<Leader>l', ':ls<CR>', { remap = false, silent = true, desc = "List all buffers"})
 
 
 -- for dealing with buffers
-vim.keymap.set('n', '<S-l>', ':bnext<CR>', opts)
-vim.keymap.set('n', '<S-h>', ':bprevious<CR>', opts)
+vim.keymap.set('n', '<S-l>', ':bnext<CR>')
+vim.keymap.set('n', '<S-h>', ':bprevious<CR>')
 
 -- Trying Ryan Florence trick with Lua
 vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { remap = false } )
@@ -325,10 +358,10 @@ vim.keymap.set('v', '<A-j>', ':m \'>+1<CR>gv=gv', { remap = false } )
 vim.keymap.set('v', '<A-k>', ':m \'<-2<CR>gv=gv', { remap = false } )
 
 -- for NvimTree
-vim.keymap.set('n', '<leader>o', ':NvimTreeToggle<CR>', opts)
+vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', { silent = true })
 
 -- for Maximizer
-vim.keymap.set('n', '<Leader>mt', ':MaximizerToggle<CR>', opts)
+vim.keymap.set('n', '<Leader>mt', ':MaximizerToggle<CR>', { desc = 'Maximize Window', remap = false, silent = true })
 
 
 -- Remap for dealing with word wrap
