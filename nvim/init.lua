@@ -341,8 +341,8 @@ vim.keymap.set('n', 'K', '5k')
 vim.keymap.set('n', 'J', '5j')
 vim.keymap.set('n', '<Leader>x', ':q!<CR>')
 vim.keymap.set('n', '<Leader>a', ':qa<CR>')
-vim.keymap.set('n', '<Leader>l', ':ls<CR>', { remap = false, silent = true, desc = "List all buffers"})
-vim.keymap.set('n', '<C-s>', ':w<CR>', { remap = false})
+vim.keymap.set('n', '<Leader>l', ':ls<CR>', { remap = false, silent = true, desc = "List All Buffers"})
+vim.keymap.set('n', '<C-s>', ':wa<CR>', { remap = false, desc = "Write All Changed Buffers"})
 
 
 -- for dealing with buffers
