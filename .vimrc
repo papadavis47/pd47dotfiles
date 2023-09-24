@@ -1,7 +1,7 @@
  " Maintained and nurtured with 😍 for my .vimrc
 
 " -----------------------------------------------------------------"
-"                   The VUNDLE STUFF 
+"                   The VUNDLE STUFF
 " -----------------------------------------------------------------"
 
 set nocompatible              " be iMproved, required
@@ -66,7 +66,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'wadackel/vim-dogrun'
 Plugin 'mattn/emmet-vim'                     " emmet
 Plugin 'matze/vim-move'
-" Set the following as last Plugin Listed 
+" Set the following as last Plugin Listed
 Plugin 'ryanoasis/vim-devicons'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -100,7 +100,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 syntax enable
 filetype plugin indent on
 autocmd BufRead,BufNewFile *.md setlocal textwidth=100
-autocmd BufRead,BufNewFile *.sh setlocal textwidth=100 
+autocmd BufRead,BufNewFile *.sh setlocal textwidth=100
 
 " I set the line below after install base16 color theme.
 " I can change the lines below if necessary
@@ -110,7 +110,7 @@ endif
 
 set background=dark
 set nocompatible
-set number relativenumber 
+set number relativenumber
 set softtabstop=2
 set shiftwidth=2
 set autoindent		          " always set autoindenting on
@@ -220,7 +220,7 @@ map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 
 " I learned this one from 'Learn VimScript the Hard Way'
 " It is for moving lines down in normal and visual mode
-noremap - ddp 
+noremap - ddp
 
 " This is for moving lines up in normal and visual
 noremap _ ddkP
@@ -250,10 +250,10 @@ nnoremap <leader>. :NERDTreeToggle<cr>
 ""nnoremap <leader>m :NERDTreeClose<cr>
 
 " Listing the buffers
-nnoremap <leader>l :ls<cr> 
+nnoremap <leader>l :ls<cr>
 
 " Quickly make a new empty tab
-nnoremap <leader>tt :tabnew<cr>   
+nnoremap <leader>tt :tabnew<cr>
 
 " Insert the date into a doc
 nnoremap <leader>d :r!date<cr>
@@ -277,14 +277,14 @@ nnoremap<leader>q :q!<cr>
 " Get rid of highlighting
 nnoremap <leader>/ :noh<cr>
 
-" Below opens netrw 
+" Below opens netrw
 nnoremap <leader>v :Vex<cr>
 
 " Open a window in it's own tab quickly
-nnoremap<leader>o <C-w>T 
+nnoremap<leader>o <C-w>T
 
 " Quick save
-nnoremap <leader>s :w<cr>
+nnoremap <leader>sa :w<cr>
 
 " Open a vertical terminal in vim
 nnoremap <leader>t :vert ter<cr>
@@ -296,7 +296,7 @@ nnoremap <leader>p :bp<cr>
 nnoremap <leader>n :bn<cr>
 
 " Another exit from insert mode to normal mode
-inoremap jj <Esc> 
+inoremap jj <Esc>
 
 " Yank to and paste from - the system clipboard
 nnoremap <leader>u "+p
@@ -372,8 +372,8 @@ let g:palenight_terminal_italics=1
 " colorscheme purify
 " colorscheme snazzy
 " colorscheme everblush
-" colorscheme palenight
-colorscheme dogrun
+colorscheme palenight
+" colorscheme dogrun
 
 "Comment and uncomment as needed
 " --------------------------------------------------"
@@ -466,7 +466,7 @@ nnoremap <leader>= :wincmd =<cr>
 " nmap cm <Plug>Commentary
 
 " On November 19, 2021 - I turned this off - for now : ) It was just an
-" experiment I may do again later. 
+" experiment I may do again later.
 
 " That is all it took. I now use `cmil` to comment a line. And `cm` work with
 " - all other text objects.
@@ -479,7 +479,7 @@ vmap <leader>gt <Plug>Titlecase
 nmap <leader>gT <Plug>TitlecaseLine
 
 "-------------------- Abbreviations -----------------------
-iabbrev ccopy Copyright 2023 John William Davis, all rights reserved. 
+iabbrev ccopy Copyright 2023 John William Davis, all rights reserved.
 iabbrev _me jwdavisdeveloper@gmail.com
 
 " This is for the custom copy plugin from Chris Toomey

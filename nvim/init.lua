@@ -49,6 +49,7 @@ require('lazy').setup({
   'folke/tokyonight.nvim',
   'fenetikm/falcon',
   'rebelot/kanagawa.nvim',
+  'navarasu/onedark.nvim',
 
   -- Git related plugins
   'tpope/vim-fugitive',
@@ -169,6 +170,7 @@ require('lazy').setup({
 
    {
     'windwp/nvim-autopairs',
+    dependencies = { 'hrsh7th/nvim-cmp' },
     event = "InsertEnter",
     opts = {} -- this is equalent to setup({}) function
   },
@@ -261,9 +263,6 @@ require('lazy').setup({
   -- { import = 'custom.plugins' },
 }, {})
 
--- [[ Setting options ]]
--- See `:help vim.o`
--- NOTE: You can change these options as you wish!
 
 -- Set highlight on 
 vim.o.hlsearch = false
@@ -319,13 +318,11 @@ vim.o.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
--- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
 -- From Trashvim
 vim.o.smartindent = true
 
--- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
@@ -335,7 +332,7 @@ vim.keymap.set('n', '<C-a>', 'gg<S-v>G')
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- My own custom keymappings from .vimrc
-vim.keymap.set('n', '<leader>s', ':w<CR>', { remap = false, silent = true, desc = "Save"})
+vim.keymap.set('n', '<leader>sa', ':w<CR>', { remap = false, silent = true, desc = "Save File"})
 vim.keymap.set('n', '<leader>e', ':q<CR>', { remap = false, silent = true, desc = "Exit"})
 vim.keymap.set('n', '<leader>d', ':bd<CR>', {remap = false, silent = true, desc = "Delete Buffer"})
 vim.keymap.set('n', 'K', '5k')
@@ -344,6 +341,7 @@ vim.keymap.set('n', '<Leader>x', ':q!<CR>', { remap = false, silent = true, desc
 vim.keymap.set('n', '<Leader>a', ':qa<CR>', {remap = false, silent = true, desc = "Quit All"})
 vim.keymap.set('n', '<Leader>l', ':ls<CR>', { remap = false, silent = true, desc = "List All Buffers"})
 vim.keymap.set('n', '<C-s>', ':wa<CR>', { remap = false, desc = "Write All Changed Buffers"})
+
 
 
 -- for dealing with buffers
@@ -398,7 +396,7 @@ pcall(require('telescope').load_extension, 'fzf')
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><leader>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>\\', require('telescope.builtin').buffers, { desc = '[\\] F,sind existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -407,8 +405,9 @@ vim.keymap.set('n', '<leader>/', function()
   })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
+
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
-vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
@@ -480,7 +479,6 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
--- Test here
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
