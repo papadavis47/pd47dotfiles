@@ -203,7 +203,7 @@ require('lazy').setup({
 {
     'goolord/alpha-nvim',
     config = function ()
-        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+        require'alpha'.setup(require'alpha.themes.startify'.config)
     end
 },
 
@@ -274,6 +274,7 @@ vim.o.cursorline = true
 -- Background
 vim.o.background = 'dark'
 
+
 -- Make line numbers default
 vim.wo.relativenumber = true
 vim.o.number = true
@@ -334,20 +335,20 @@ vim.keymap.set('n', '<C-a>', 'gg<S-v>G')
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- My own custom keymappings from .vimrc
-vim.keymap.set('n', '<leader>s', ':w<CR>')
-vim.keymap.set('n', '<leader>e', ':q<CR>')
-vim.keymap.set('n', '<leader>d', ':bd<CR>')
+vim.keymap.set('n', '<leader>s', ':w<CR>', { remap = false, silent = true, desc = "Save"})
+vim.keymap.set('n', '<leader>e', ':q<CR>', { remap = false, silent = true, desc = "Exit"})
+vim.keymap.set('n', '<leader>d', ':bd<CR>', {remap = false, silent = true, desc = "Delete Buffer"})
 vim.keymap.set('n', 'K', '5k')
 vim.keymap.set('n', 'J', '5j')
-vim.keymap.set('n', '<Leader>x', ':q!<CR>')
-vim.keymap.set('n', '<Leader>a', ':qa<CR>')
+vim.keymap.set('n', '<Leader>x', ':q!<CR>', { remap = false, silent = true, desc = "Quit Without Saving"})
+vim.keymap.set('n', '<Leader>a', ':qa<CR>', {remap = false, silent = true, desc = "Quit All"})
 vim.keymap.set('n', '<Leader>l', ':ls<CR>', { remap = false, silent = true, desc = "List All Buffers"})
 vim.keymap.set('n', '<C-s>', ':wa<CR>', { remap = false, desc = "Write All Changed Buffers"})
 
 
 -- for dealing with buffers
-vim.keymap.set('n', '<S-l>', ':bnext<CR>')
-vim.keymap.set('n', '<S-h>', ':bprevious<CR>')
+vim.keymap.set('n', '<S-l>', ':bnext<CR>', {desc = "Next Buffer"})
+vim.keymap.set('n', '<S-h>', ':bprevious<CR>', {desc = "Previous Buffer"})
 
 -- Trying Ryan Florence trick with Lua
 vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { remap = false } )
