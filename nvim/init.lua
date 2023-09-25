@@ -19,6 +19,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 
+
 vim.g.mapleader = ','
 vim.g.maplocalleader = ','
 
@@ -362,7 +363,7 @@ vim.keymap.set('v', '<A-j>', ':m \'>+1<CR>gv=gv', { remap = false } )
 vim.keymap.set('v', '<A-k>', ':m \'<-2<CR>gv=gv', { remap = false } )
 
 -- for NvimTree
-vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', { silent = true })
+vim.keymap.set('n', '<C-m>', ':NvimTreeToggle<CR>', { silent = true })
 
 -- for Maximizer
 vim.keymap.set('n', '<Leader>mt', ':MaximizerToggle<CR>', { desc = 'Maximize Window', remap = false, silent = true })
