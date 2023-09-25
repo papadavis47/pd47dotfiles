@@ -8,6 +8,10 @@
 
 --]]
 
+-- Test
+-- Another Test
+-- Yet another test
+-- Another test again
 
 
 -- disable netrw at the very start of your init.lua
@@ -332,15 +336,16 @@ vim.keymap.set('n', '<C-a>', 'gg<S-v>G')
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- My own custom keymappings from .vimrc
-vim.keymap.set('n', '<leader>sa', ':w<CR>', { remap = false, silent = true, desc = "Save File"})
+vim.keymap.set('n', '<leader>s', ':w<CR>', { remap = false, silent = true, desc = "Save File"})
 vim.keymap.set('n', '<leader>e', ':q<CR>', { remap = false, silent = true, desc = "Exit"})
-vim.keymap.set('n', '<leader>d', ':bd<CR>', {remap = false, silent = true, desc = "Delete Buffer"})
+vim.keymap.set('n', '<leader>bd', ':bd<CR>', { remap = false, silent = true, desc = "Delete Buffer"})
 vim.keymap.set('n', 'K', '5k')
 vim.keymap.set('n', 'J', '5j')
 vim.keymap.set('n', '<Leader>x', ':q!<CR>', { remap = false, silent = true, desc = "Quit Without Saving"})
 vim.keymap.set('n', '<Leader>a', ':qa<CR>', {remap = false, silent = true, desc = "Quit All"})
 vim.keymap.set('n', '<Leader>l', ':ls<CR>', { remap = false, silent = true, desc = "List All Buffers"})
 vim.keymap.set('n', '<C-s>', ':wa<CR>', { remap = false, desc = "Write All Changed Buffers"})
+vim.keymap.set('n', '<Leader>c', ':helpclose<CR>', { remap = false, silent = true, desc = "Close Help Window"})
 
 
 

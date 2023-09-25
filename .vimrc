@@ -284,7 +284,7 @@ nnoremap <leader>v :Vex<cr>
 nnoremap<leader>o <C-w>T
 
 " Quick save
-nnoremap <leader>sa :w<cr>
+nnoremap <leader>s :w<cr>
 
 " Open a vertical terminal in vim
 nnoremap <leader>t :vert ter<cr>
