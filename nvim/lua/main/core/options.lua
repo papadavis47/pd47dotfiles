@@ -1,15 +1,14 @@
 -- Variable for conciseness
 local opt = vim.opt
 
--- Set highlight on 
+-- Set highlight on
 opt.hlsearch = false
 
 -- Cursor line
 opt.cursorline = true
 
 -- Background
-opt.background = 'dark'
-
+opt.background = "dark"
 
 -- Make line numbers default
 opt.relativenumber = true
@@ -17,7 +16,7 @@ opt.number = true
 opt.numberwidth = 2
 
 -- Enable mouse mode
-opt.mouse = 'a'
+opt.mouse = "a"
 
 -- From trash.nvim
 -- vim.o.showtabline = 2
@@ -26,7 +25,7 @@ opt.tabstop = 2
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-opt.clipboard = 'unnamedplus'
+opt.clipboard = "unnamedplus"
 
 -- Enable break indent
 opt.breakindent = true
@@ -45,7 +44,7 @@ opt.splitright = true
 opt.splitbelow = true
 
 -- Keep signcolumn on by default
-opt.signcolumn = 'yes'
+opt.signcolumn = "yes"
 
 -- Decrease update time
 opt.updatetime = 250
@@ -53,10 +52,12 @@ opt.timeout = true
 opt.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
-opt.completeopt = 'menuone,noselect'
+opt.completeopt = "menuone,noselect"
 
 opt.termguicolors = true
 
 -- From Trashvim
 opt.smartindent = true
 
+vim.cmd([[autocmd BufRead,BufNewFile *.md setlocal textwidth=100]])
+vim.cmd([[autocmd BufRead,BufNewFile *.sh setlocal textwidth=100]])

@@ -21,3 +21,11 @@ There are a "thousand different roads to Mecca". 🥋 🦁
 
 I wrote more about how my `.vimrc` file evolved in
 [this post](https://dev.to/papadavis47/a-walking-stick-and-a-vimrc-27jl) on **dev.to**.
+
+# Update / September 2023
+
+I have now gone all in on Neovim. I built it from source last week. It has been great.
+
+Lua is fascinating. `lazy.nvim` is truly amazing software.
+
+There is a huge amount of innovation going on with [Neovim](https://neovim.io) and it is just plain **fun** :)
