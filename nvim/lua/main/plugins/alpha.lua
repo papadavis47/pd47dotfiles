@@ -33,3 +33,5 @@ return {
 		vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
 	end,
 }
+
+-- Notifications on Lazy off - test
