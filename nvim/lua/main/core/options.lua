@@ -3,6 +3,9 @@ local opt = vim.opt
 
 -- Set highlight on
 opt.hlsearch = false
+opt.incsearch = true
+
+opt.expandtab = true
 
 -- Cursor line
 opt.cursorline = true
@@ -58,6 +61,9 @@ opt.termguicolors = true
 
 -- From Trashvim
 opt.smartindent = true
+
+-- From Primeagen
+opt.scrolloff = 8
 
 vim.cmd([[autocmd BufRead,BufNewFile *.md setlocal textwidth=100]])
 vim.cmd([[autocmd BufRead,BufNewFile *.sh setlocal textwidth=100]])

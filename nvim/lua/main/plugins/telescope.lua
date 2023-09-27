@@ -30,7 +30,7 @@ return {
 		local keymap = vim.keymap -- for conciseness
 
 		keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-		keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
+		keymap.set("n", "<C-p>", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
 		-- these two lines below are not working and I have to figure out why 9.27.2023
 		-- I did intall `ripgrep` a Rust program using apt - but fc is still not working while fs is
 		keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })

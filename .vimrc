@@ -235,7 +235,9 @@ nmap <F6> I
 inoremap <c-d> <esc>ddi
 
 " Mapping Q to q when I make that mistake on quitting
-command! Q q "Bind :Q to :q
+" command! Q q "Bind :Q to :q
+
+nnoremap Q :q<cr>
 
 " Switch between the last two files
 nnoremap <leader><leader> <C-^>
