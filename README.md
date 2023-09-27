@@ -24,8 +24,10 @@ I wrote more about how my `.vimrc` file evolved in
 
 # Update / September 2023
 
-I have now gone all in on Neovim. I built it from source last week. It has been great.
+I have now gone all in on [Neovim](https://neovim.io). I built it from source last week. It has been great.
 
 Lua is fascinating. `lazy.nvim` is truly amazing software.
+
+https://github.com/folke/lazy.nvim
 
 There is a huge amount of innovation going on with [Neovim](https://neovim.io) and it is just plain **fun** :)
