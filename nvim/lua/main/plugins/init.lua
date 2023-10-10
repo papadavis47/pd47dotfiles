@@ -6,6 +6,7 @@ return {
 	"fenetikm/falcon",
 	"rebelot/kanagawa.nvim",
 	"phha/zenburn.nvim",
+	"bluz71/vim-nightfly-colors",
 
 	"navarasu/onedark.nvim",
 	-- Git related plugins

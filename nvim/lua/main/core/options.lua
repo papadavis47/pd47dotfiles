@@ -10,6 +10,9 @@ opt.expandtab = true
 -- Cursor line
 opt.cursorline = true
 
+-- Cursorcolumn
+opt.cursorcolumn = true
+
 -- Background
 opt.background = "dark"
 
