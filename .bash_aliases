@@ -28,6 +28,15 @@ alias notes="cd ~/ObsidianVaults"
 alias vs="code ."
 alias nv="nvim"
 
+# Bun
+alias bd="bun dev"
+
+# pnpm
+alias pd="pnpm dev"
+
+# yarn
+alias yd="yarn dev"
+
 # Navigation
 alias journal="cd ~/newJournal2023"
 
@@ -43,8 +52,6 @@ alias twnext="yarn create next-app -e https://github.com/papadavis47/my-tailwind
 alias bkupcode="cp -i ~/.config/Code/User/keybindings.json ~/.config/Code/User/settings.json ~/pd47dotfiles/vscode/"
 alias bkupprofile="cp -i ~/.bash_profile ~/pd47dotfiles/"
 
-# yarn
-alias yd="yarn dev"
 
 # Git aliases
 alias gst="git status"
