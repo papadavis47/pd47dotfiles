@@ -21,8 +21,9 @@ return {
 		-- Set menu
 		dashboard.section.buttons.val = {
 			dashboard.button("e", "  > New File", "<cmd>ene<CR>"),
-			dashboard.button("Ctrl+m", "  > Toggle file explorer", "<cmd>NvimTreeToggle<CR>"),
+			dashboard.button("Ctrl+p", "  > Find Recent Files", "<cmd>Telescope oldfiles<cr>"),
 			dashboard.button("<Leader>ff", "󰱼  > Search For File", "<cmd>Telescope find_files<CR>"),
+			dashboard.button("w", "  > Edit Config", "<cmd>e ~/.config/nvim/<CR>"),
 			dashboard.button("q", "  > Quit NVIM", "<cmd>qa<CR>"),
 		}
 
@@ -33,5 +34,3 @@ return {
 		vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
 	end,
 }
-
--- Notifications on Lazy off - test
