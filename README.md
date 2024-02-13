@@ -31,3 +31,8 @@ Lua is fascinating. `lazy.nvim` is truly amazing software.
 https://github.com/folke/lazy.nvim
 
 There is a huge amount of innovation going on with [Neovim](https://neovim.io) and it is just plain **fun** :)
+
+# Update / February 2024
+
+Becoming more and more commited to working with Neovim. It can be so much fun sometimes. I love the
+incremental learning involved with the process :)
