@@ -22,6 +22,11 @@ keymap.set("n", "<Leader>l", ":ls<CR>", { remap = false, silent = true, desc = "
 keymap.set("n", "<C-s>", ":wa<CR>", { remap = false, desc = "Write All Changed Buffers" })
 keymap.set("n", "<Leader>c", ":helpclose<CR>", { remap = false, silent = true, desc = "Close Help Window" })
 
+-- New Creations for 2024
+keymap.set("n", "<leader>t", ":tabnew<CR>", { remap = false, silent = true, desc = "New Tab" })
+keymap.set("n", "<leader>n", ":tabnext<CR>", { remap = false, silent = true, desc = "Next Tab" })
+keymap.set("n", "<leader>p", ":tabprev<CR>", { remap = false, silent = true, desc = "Previous Tab" })
+
 -- for dealing with buffers
 keymap.set("n", "<S-l>", ":bnext<CR>", { desc = "Next Buffer", silent = true })
 keymap.set("n", "<S-h>", ":bprevious<CR>", { desc = "Previous Buffer", silent = true })
@@ -46,9 +51,9 @@ keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true }
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-	group = highlight_group,
-	pattern = "*",
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = "*",
 })
