@@ -19,8 +19,11 @@ keymap.set("n", "K", "5k")
 keymap.set("n", "J", "5j")
 keymap.set("n", "<Leader>x", ":q!<CR>", { remap = false, silent = true, desc = "Quit Without Saving" })
 keymap.set("n", "<Leader>l", ":ls<CR>", { remap = false, silent = true, desc = "List All Buffers" })
-keymap.set("n", "<C-s>", ":wa<CR>", { remap = false, desc = "Write All Changed Buffers" })
+keymap.set("n", "<C-s>", ":w<CR>", { remap = false, desc = "Write Current Buffer" })
 keymap.set("n", "<Leader>c", ":helpclose<CR>", { remap = false, silent = true, desc = "Close Help Window" })
+
+local map = vim.api.nvim_set_keymap
+map("i", "<C-s>", "<Escape>:w<CR>", { noremap = true })
 
 -- New Creations for 2024
 keymap.set("n", "<leader>t", ":tabnew<CR>", { remap = false, silent = true, desc = "New Tab" })
