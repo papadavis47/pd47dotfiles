@@ -12,8 +12,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "main.plugins" }, { import = "main.plugins.lsp" } }, {
-  -- install = { colorscheme = { "kanagawa" } },
-  install = { colorscheme = { "tokyonight" } },
+  install = { colorscheme = { "kanagawa" } },
+  -- install = { colorscheme = { "tokyonight" } },
+  -- install = { colorscheme = { "catpuccin" } },
   checker = { enabled = true, notify = false },
   change_detection = { notify = false },
 })
