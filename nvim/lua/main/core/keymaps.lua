@@ -1,7 +1,7 @@
 -- Set leader key to comma
 
-vim.g.mapleader = ","
-vim.g.maplocalleader = ","
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- variable for conciseness
 local keymap = vim.keymap

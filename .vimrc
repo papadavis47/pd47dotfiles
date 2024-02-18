@@ -4,6 +4,9 @@
 "                   The VUNDLE STUFF
 " -----------------------------------------------------------------"
 
+"TEsting out my leader"
+
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 " set the runtime path to include Vundle and initialize
@@ -187,7 +190,7 @@ autocmd Filetype help nnoremap <buffer>q :q<CR>
 "the line below is for using the mouse once in a while for cursor position
 set mouse=a
 "playing with leader values here for the next few lines.
-let mapleader=","
+let mapleader=" "
 
 " Setting some search options below
 set incsearch

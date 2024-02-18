@@ -10,7 +10,7 @@
   // Panels
 
   {
-    "key": "ctrl+k ctrl+e",
+    "key": "ctrl+e",
     "command": "workbench.view.explorer"
   },
   {
@@ -301,20 +301,6 @@
   // I just checked it on January 28, 2023 - and it is still working
 
   // The following were made from the Keyboard shortcut GUI
-  {
-    "key": "ctrl+k ctrl+shift+l",
-    "command": "extension.liveServer.goOnline",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+k ctrl+shift+c",
-    "command": "extension.liveServer.goOffline",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "alt+m",
-    "command": "quokka.toggle"
-  },
   {
     "key": "ctrl+k a",
     "command": "workbench.action.toggleActivityBarVisibility"
