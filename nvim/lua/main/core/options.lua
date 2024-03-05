@@ -47,7 +47,8 @@ opt.smartcase = true
 opt.splitright = true
 
 -- Split Window Below
-opt.splitbelow = true
+-- I was overriding this option here - found on March 03, 2024
+-- opt.splitbelow = true
 
 -- Keep signcolumn on by default
 opt.signcolumn = "yes"

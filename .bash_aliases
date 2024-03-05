@@ -27,6 +27,9 @@ alias notes="cd ~/ObsidianVaults"
 alias vs="code ."
 alias nv="nvim"
 
+# Tauri
+alias ytd="yarn tauri dev"
+
 # Bun
 alias bd="bun dev"
 
@@ -57,8 +60,7 @@ alias dotfiles="cd ~/pd47dotfiles; ls -la"
 
 # Script Helpers
 alias execute="chmod +x $1"
-alias paths="echo $PATH | tr \: \\n"
 
 # Rust version of cat
-alias bat="batcat"
+alias cat="batcat"
 
