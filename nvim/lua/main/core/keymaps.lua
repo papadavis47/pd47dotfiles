@@ -12,7 +12,6 @@ keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- My own custom keymappings from .vimrc
 keymap.set("n", "<leader>s", ":w<CR>", { remap = false, silent = true, desc = "Save File" })
--- keymap.set("n", "<leader>e", ":q<CR>", { remap = false, silent = true, desc = "Exit" })
 keymap.set("n", "Q", ":q<CR>", { remap = false, silent = true, desc = "Exit" })
 keymap.set("n", "<leader>e", ":bd<CR>", { remap = false, silent = true, desc = "Delete Buffer" })
 keymap.set("n", "K", "5k")
@@ -60,3 +59,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   group = highlight_group,
   pattern = "*",
 })
+
+if vim.lsp.inlay_hint then
+  vim.keymap.set("n", "<leader>h", function()
+    vim.lsp.inlay_hint(0, nil)
+  end, { desc = "Toggle Inlay HInts" })
+end

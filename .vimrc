@@ -300,9 +300,6 @@ nnoremap <leader>p :bp<cr>
 " Switch buffer to next
 nnoremap <leader>n :bn<cr>
 
-" Another exit from insert mode to normal mode
-inoremap jj <Esc>
-
 " Yank to and paste from - the system clipboard
 nnoremap <leader>u "+p
 vnoremap <leader>y "+y

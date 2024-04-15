@@ -123,31 +123,6 @@ fi
 export EDITOR="code -w"
 export MYVIMRC=~/.vimrc
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/home/papadavis47/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/home/papadavis47/anaconda3/etc/profile.d/conda.sh" ]; then
-#         . "/home/papadavis47/anaconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/home/papadavis47/anaconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# <<< conda initialize <<<
-
-# source ~/.git-prompt.sh
-
-#export PS1="\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;1m\]@\[$(tput sgr0)\]\[\033[38;5;4m\]\h\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;11m\][\w]\[$(tput sgr0)\]\\$: \[$(tput sgr0)\]"
-
-# set -o vi
-
-# The following is something I put in after the RealPython Flask tutorial
-# I can change it as needed
-
-#source `which activate.sh`
 export TERM="xterm-256color"
 # The following is for NVM - Node Version Manager
 
@@ -174,3 +149,8 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 export MODULAR_HOME="/home/papa/.modular"
 export PATH="/home/papa/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
+export PATH="/.local/lib/python3.10/site-packages:$PATH"
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"
+eval "$(zoxide init bash)"

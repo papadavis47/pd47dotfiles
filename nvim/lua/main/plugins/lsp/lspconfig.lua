@@ -18,6 +18,7 @@ return {
     local opts = { noremap = true, silent = true }
     local on_attach = function(client, bufnr)
       opts.buffer = bufnr
+      -- opts.inlay_hints = { enabled = true }
 
       -- set keybinds
       opts.desc = "Show LSP references"
@@ -81,6 +82,8 @@ return {
     lspconfig["rust_analyzer"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+      inlay_hints = { enabled = true },
+      vim.lsp.inlay_hint(0, nil),
     })
 
     -- Below is an attempt to get inlay hints working
