@@ -154,3 +154,6 @@ export PATH="/.local/lib/python3.10/site-packages:$PATH"
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 eval "$(atuin init bash)"
 eval "$(zoxide init bash)"
+
+# Turso
+export PATH="/home/papa/.turso:$PATH"

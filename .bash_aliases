@@ -27,6 +27,9 @@ alias notes="cd ~/ObsidianVaults"
 alias vs="code ."
 alias nv="nvim"
 
+# pnpm
+alias pn=pnpm
+
 # Tauri
 alias ytd="yarn tauri dev"
 
