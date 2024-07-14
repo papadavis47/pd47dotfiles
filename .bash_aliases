@@ -1,4 +1,5 @@
 #These are some new aliases I am going to work with in bash. These are my own. 
+alias bclean='sudo apt autoremove'
 alias c='clear'
 alias e='exit'
 alias v='vim'

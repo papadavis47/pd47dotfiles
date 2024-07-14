@@ -11,7 +11,7 @@ opt.expandtab = true
 opt.cursorline = true
 
 -- Cursorcolumn
-opt.cursorcolumn = true
+-- opt.cursorcolumn = true
 
 -- Background
 opt.background = "dark"
@@ -71,3 +71,5 @@ opt.scrolloff = 8
 
 vim.cmd([[autocmd BufRead,BufNewFile *.md setlocal textwidth=100]])
 vim.cmd([[autocmd BufRead,BufNewFile *.sh setlocal textwidth=100]])
+vim.cmd([[autocmd BufRead,BufNewFile *.go setlocal textwidth=80]])
+vim.cmd([[autocmd BufRead,BufNewFile *.go setlocal tabstop=4]])

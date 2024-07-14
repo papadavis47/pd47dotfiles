@@ -157,3 +157,4 @@ eval "$(zoxide init bash)"
 
 # Turso
 export PATH="/home/papa/.turso:$PATH"
+source ~/.bash_completion/alacritty
