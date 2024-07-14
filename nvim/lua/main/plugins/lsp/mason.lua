@@ -37,7 +37,6 @@ return {
         "graphql",
         "emmet_ls",
         "prismals",
-        "pyright",
         "rust_analyzer",
       },
       -- auto-install configured servers (with lspconfig)

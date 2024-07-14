@@ -10,6 +10,8 @@ local keymap = vim.keymap
 keymap.set("n", "<C-a>", "gg<S-v>G")
 keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
+-- test
+-- now is the time
 -- My own custom keymappings from .vimrc
 keymap.set("n", "<leader>s", ":w<CR>", { remap = false, silent = true, desc = "Save File" })
 keymap.set("n", "Q", ":q<CR>", { remap = false, silent = true, desc = "Exit" })

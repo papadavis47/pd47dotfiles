@@ -3,11 +3,19 @@ export PATH="$HOME/scripts:$PATH"
 # Moved these from my .bashrc file on December 21, 2020
 export PATH="/opt:$PATH"
 export PATH="$HOME/my_bash_scripts:$PATH"
-export PATH="$HOME/pythonscripts:$PATH"
-export PATH="$HOME/GitHub_Projects/py_tools:$PATH"
+
+# The following is for Lua
+export PATH="$HOME/.luarocks/bin:$PATH"
+
+# The following is for Go  
+# export GOROOT=/usr/local/go
+# export GOPATH=$HOME/go
+# export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+export PATH=$PATH:/usr/local/go/bin
 
 
-
+. "$HOME/.cargo/env"
 
 
 if [ -f ~/.bashrc ]; then
@@ -16,4 +24,3 @@ fi
 
 
 
-. "$HOME/.cargo/env"

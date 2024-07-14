@@ -36,6 +36,12 @@
     "editor.tabSize": 2,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[go]": {
+    "editor.insertSpaces": false,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "golang.go",
+    "editor.tabSize": 4
+  },
   // Experiment here with the following:
   "workbench.tree.indent": 15,
   "workbench.tree.renderIndentGuides": "always",
@@ -94,8 +100,6 @@
   },
   "files.associations": {
     "**/*.html": "html",
-    "**/templates/**/*.html": "django-html",
-    "**/templates/**/*": "django-txt",
     "**/requirements{/**,*}.{txt,in}": "pip-requirements"
   },
   "python.analysis.completeFunctionParens": true,
@@ -109,18 +113,24 @@
   },
 
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "python.formatting.provider": "none"
+    "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "prettier.printWidth": 100,
   "[markdown]": {
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 100,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
+    "editor.suggestOnTriggerCharacters": false
   },
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
+  "html.autoCreateQuotes": false,
   "editor.wordWrapColumn": 100,
   "python.analysis.autoImportCompletions": false,
   "python.analysis.autoSearchPaths": false,
@@ -143,8 +153,9 @@
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
   "javascript.preferences.importModuleSpecifierEnding": "index",
   "[rust]": {
-    "editor.defaultFormatter": "jinxdash.prettier-rust",
-    "editor.formatOnSave": true
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file"
   },
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
@@ -173,16 +184,16 @@
   "editor.lightbulb.enabled": "off",
   "breadcrumbs.enabled": false,
   "editor.overviewRulerBorder": false,
-  "workbench.tips.enabled": false,
+  "workbench.tips.enabled": true,
   "editor.colorDecorators": true,
   "problems.decorations.enabled": false,
   "editor.renderControlCharacters": false,
   "editor.hideCursorInOverviewRuler": true,
   //   2nd try with Porzio
   "git.decorations.enabled": false,
-  "editor.codeLens": false,
+  "editor.codeLens": true,
   // The below setting is something I will experiment with
-  "editor.occurrencesHighlight": "singleFile",
+  "editor.occurrencesHighlight": "off",
 
   // Typography
   "editor.lineHeight": 26,
@@ -215,14 +226,12 @@
     }
   },
 
-  // Some new liveserver config for html files that need it
-
   "liveServer.settings.fullReload": true,
-  //   "liveServer.settings.root": "/src",
   "liveServer.settings.root": "/",
   "[dotenv]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
+
   // Find exclusions:
 
   "search.exclude": {
@@ -242,7 +251,23 @@
   "[mdx]": {
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 100,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
+    "editor.suggestOnTriggerCharacters": false
+  },
+  "[md]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 100,
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
+    "editor.suggestOnTriggerCharacters": false
   },
   "eslint.probe": [
     "javascript",
@@ -266,6 +291,7 @@
   "terminal.integrated.tabs.enabled": false,
   "markdownlint.config": {
     "MD033": false,
+    "MD042": false,
     "no-inline-html": {
       "allowed_elements": ["h1", "p", "img"]
     },
@@ -296,7 +322,10 @@
     "as-const",
     "as-const-on-object",
     "omit-utility-type",
-    "tuple-type"
+    "tuple-type",
+    "readonly-utility-type",
+    "type-alias-with-multiple-generics",
+    "conditional-type"
   ],
   "totalTypeScript.hideAllTips": false,
   "totalTypeScript.hideBasicTips": false,
@@ -304,7 +333,6 @@
   "window.doubleClickIconToClose": true,
   "editor.wordWrap": "bounded",
   "editor.formatOnPaste": true,
-  "workbench.sideBar.location": "right",
   "editor.inlineSuggest.enabled": true,
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
@@ -315,13 +343,24 @@
     "markdown": false,
     "scminput": false
   },
-  "workbench.colorTheme": "Winter is Coming (Dark Black)",
+  "workbench.colorTheme": "Winter is Coming (Dark Blue)",
   "terminal.integrated.altClickMovesCursor": false,
-  "workbench.activityBar.location": "hidden",
   "window.zoomLevel": 1,
   "workbench.editor.tabActionCloseVisibility": false,
   "prettier.enableDebugLogs": true,
   "prettier.htmlWhitespaceSensitivity": "strict",
   "prettier.useEditorConfig": false,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "editor.stickyScroll.enabled": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "workbench.activityBar.location": "hidden",
+  "workbench.sideBar.location": "right",
+  "eslint.workingDirectories": [],
+  "[sql]": {
+    "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+  },
+  "window.customTitleBarVisibility": "windowed",
+  "prisma.showPrismaDataPlatformNotification": false,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "gopls": {}
 }

@@ -81,7 +81,7 @@
   //
 
   {
-    "key": "shift+k",
+    "key": "ctrl+p",
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
@@ -91,7 +91,7 @@
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
   {
-    "key": "shift+j",
+    "key": "ctrl+n",
     "command": "selectNextSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
@@ -258,6 +258,29 @@
         {
           "editor.fontSize": 17,
           "editor.lineHeight": 30
+        }
+      ]
+    }
+  },
+
+  // Trying type hint toggle
+  /**
+   * Toggle Inlay Hints
+   **/
+  {
+    "key": "ctrl-k ctrl-h",
+    "command": "toggle",
+    "when": "editorFocus",
+    "args": {
+      "id": "rust-analyzer.inlayHints.typeHints.enable",
+      "value": [
+        // below is my default
+        {
+          "rust-analyzer.inlayHints.typeHints.enable": true
+        },
+        // this is my 2nd choice here
+        {
+          "rust-analyzer.inlayHints.typeHints.enable": false
         }
       ]
     }
