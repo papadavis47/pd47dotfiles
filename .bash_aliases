@@ -1,8 +1,7 @@
-#These are some new aliases I am going to work with in bash. These are my own. 
+#These are some new aliases I am going to work with in bash. These are my own.
 alias bclean='sudo apt autoremove'
 alias c='clear'
 alias e='exit'
-alias v='vim'
 alias projects='cd ~/priority-projects/'
 alias ..='cd ../'
 alias ...='cd ../../'
@@ -18,15 +17,16 @@ alias vimrc="vim ~/.vimrc"
 alias neolua="nvim ~/.config/nvim/"
 alias bashrc="nvim ~/.bashrc"
 alias newalias="nvim ~/.bash_aliases"
-alias saremove="sudo apt autoremove"
 alias bsource="source ~/.bashrc"
 alias clock="tty-clock -cs -C 1 -S"
 alias hackme="sudo openvpn ~/tryhackme/papadavis47.ovpn"
 alias sqlitestudio="/opt/SQLiteStudio/sqlitestudio&"
 alias t="tree"
 alias notes="cd ~/ObsidianVaults"
-alias vs="code ."
 alias nv="nvim"
+
+# Go
+alias got="go test"
 
 # pnpm
 alias pn=pnpm
@@ -38,7 +38,7 @@ alias ytd="yarn tauri dev"
 alias bd="bun dev"
 
 # pnpm
-alias pd="pnpm dev"
+alias pd="pnpm run dev"
 
 # yarn
 alias yd="yarn dev"
@@ -68,3 +68,6 @@ alias execute="chmod +x $1"
 # Rust version of cat
 alias cat="batcat"
 
+# For pbcopy on Ubuntu
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'

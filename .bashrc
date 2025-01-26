@@ -45,7 +45,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-# force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -120,7 +120,9 @@ fi
 #     source /etc/profile.d/vte.sh
 # fi
 
-export EDITOR="code -w"
+# export EDITOR="code -w"
+# I may have to adjust this to 'nvim -f' if I use chezmoi. I am not sure yet.
+export EDITOR="nvim -f"
 export MYVIMRC=~/.vimrc
 
 export TERM="xterm-256color"
@@ -155,9 +157,19 @@ export PATH="/.local/lib/python3.10/site-packages:$PATH"
 eval "$(atuin init bash)"
 eval "$(zoxide init bash)"
 
+# Deno
+export DENO_INSTALL="/home/papa/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+
 # Turso
 export PATH="/home/papa/.turso:$PATH"
 
 # Go
-export PATH=$PATH:/usr/local/go/bin
+# The following was put in before I understood GOPATH and how it works, but-
+# I am keeping it commente here for safety - October 17, 2024
+# All of this info now lives in .bash_profile 
+# export PATH=$PATH:/usr/local/go/bin
+
+# Alacritty
 source ~/.bash_completion/alacritty
