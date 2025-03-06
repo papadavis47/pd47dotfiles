@@ -28,6 +28,9 @@ alias nv="nvim"
 # Go
 alias got="go test"
 
+# Python and Mojo
+alias python=python3
+
 # pnpm
 alias pn=pnpm
 
